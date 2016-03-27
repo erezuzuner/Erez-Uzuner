@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
+    <title>JSON Array_Erez Uzuner</title>
+    <meta charset="windows-1254">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="avg"> </div>
+<script> 
+var students = {students:[
+        {"name":"Hasan", "age":22, "weight":65},
+        {"name":"Muharrem", "age":24, "weight":62},
+        {"name":"Orcun", "age":12, "weight":40}
+]    
+};
+var avgAge = calcAvgAge(students);
+$('#avg').append("Average age of students: " + avgAge + "<br>");
+var avgWeight = calcAvgHeight(students);
+$('#avg').append("Average weight of students: " + avgWeight + "<br>");
+
+function calcAvgAge(obj) {
+    var totalAge = 0;
+    for (var i=0; i < obj.students.length; i++) {
+        totalAge += obj.students[i].age; 
+    }
+    return totalAge / obj.students.length;
+}
+function calcAvgWeight(obj) {
+    var totalWeight = 0;
+    for (var i=0; i < obj.students.length; i++) {
+        totalWeight += obj.students[i].weight; 
+    }
+        return totalWeight / obj.students.length;
+}
+</script>  
+</body>
+</html>

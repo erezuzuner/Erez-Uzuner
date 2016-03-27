@@ -1,0 +1,40 @@
+
+<html>
+<head>
+    <title>Erez_Uzuner_Function_Multiplication</title>
+     <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"/>
+        <script>
+            function multiplication (z) {
+                var x=2;
+                var y=3;
+                var z=x*y;
+                 }         
+ </script>
+</head>
+    <body> 
+    <div>
+             <form>
+                 <input type="text" id="x" value="2"/>
+                 <input type="text" id="y" value="3"/>
+                 <input type="text" id="z" placeholder="Here goes the result!.."/>
+                 <input type="button" 
+                        onmouseover="calculate();" 
+                        onclick="calculate();"
+                 />
+             </form>
+         </div>
+    
+    <script> 
+                 function calculate () {
+                 var x = ($('#x').val());
+                 var y = ($('#y').val());
+                var z = eval(x + $('#multiplication').val()+y); 
+                }       
+             
+         </script>
+    
+        </body>
+        </html>
+    

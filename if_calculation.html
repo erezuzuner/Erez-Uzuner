@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+    <title>Calculator_Erez Uzuner</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <meta charset="windows-1254">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div>
+    <form>
+            <input type="text" id="input1">
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="/">/</option>
+                <option value="*">*</option>
+            </select>
+            <input type="text" id="input2">
+            <input type="button" id="calc" value="calc" onclick="calculate();">
+            <input type="text" id="output" disabled> 
+            <br>
+    </form>
+    </div>    
+    <div id="error">
+    </div>
+    <script src="custom.js"> 
+    </script>
+</body>
+</html>
+
+

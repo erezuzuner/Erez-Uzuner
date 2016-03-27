@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <title>JSON_array_grades</title>
+    <meta charset="windows-1254">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="avg"> </div>
+
+<script>
+    var exams ={exams: [
+            {"Type":"Midterm1" , "grade":85},
+            {"Type":"Midterm2" , "grade":95},
+            {"Type":"Final" , "grade":80}
+    ]
+        };
+    var avgGrades = calcAvgGrades(exams);
+    $('#avg').append("Average grades of exams: " + avgGrades + "<br>");   
+
+    function calcAvgGrades(obj) {
+        for (var i=0; i < obj.students.length; i++) {
+        totalGrades += obj.students[i].grades; 
+    }
+    return totalGrades / obj.students.length;
+}
+</script>
+</body>
+</html>

@@ -6,37 +6,39 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>factorial(n)</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script>
-            function factorial (num){
-                var res = 1;// we will return this line
-                for (var i=2; i<=num; i++){ //loop up from this line 
-                    res=res*i;
-                }
-        return res;
-            }
-        </script>
-    </head>
-    <body>
-        <div> 
-            <form>
-                <input type="text" id="num" value="6"/>
-                <input type="text" id="res" placeholder="Here you can find the right answerr!!"/>
-                <input type="button" 
-                       onmouseover="calculate();"
-                       onclick="calculate();"
-                       />
-            </form>
-            </div>
-            <script>
-                function calculate() {
-                var innum = $('#num') val();
-                var res = factorial(innum);
-                $('#res') val(res);
-            }
-            </script>
-    </body>
+    <title>Factorial (n)</title>
+    <meta charset="windows-1254">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+       function factorial(num){
+           var res=1;
+           for(var i=2; i<=num; 1++)
+           {
+               res = res * i;
+           }
+           return res;
+       }  
+    </script>
+</head>
+<body>
+<div>
+    <form>
+        <input type="text" id="num" value="6"/>
+        <input type="text" id="res" placeholder="Here goes to results" />
+        <input type="button"
+               onmouseover="calculate();"
+               onclick="calculate();"
+               />
+    </form>
+</div>
+    <script>
+        function claculate()
+        {
+            var innum = $('#num').val();
+            var res = factorial(innum);
+            $('#res').val(res);
+        }
+    </script>
+</body>
 </html>
