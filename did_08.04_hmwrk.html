@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Draggable_04_04</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0-rc.1/jquery-ui.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        .box {
+                position: absolute;
+                height: 20%;
+                width: 20%;
+                background-color: orange;
+        }
+        #draggable1 {
+                top: 10%;
+                left: 10%;
+            }
+        #draggable2 {
+                top: 70%;
+                right: 20%;
+                background-color: blue;
+                width: 10%;
+                height: 5%;
+            }
+        #draggable12 { 
+            width: 150px; height: 150px; padding: 1em; }
+            </style>
+            
+           <script type="text/javascript">
+               $(document).ready (function() {
+                 $("#draggable2").draggable();
+                 $("#draggable1").droppable( 
+                         {
+                             drop: function() {
+              $("draggable2").draggable("disable");
+              $("draggable1").draggable("disable");
+              $("draggable1").css("background-color", "blue").html("");
+              $("draggable2").css("background-color", "blue").html("");
+          }
+      }
+               );
+   });
+   
+      </script>
+    </head>
+   
+    <body>
+        <div id="draggable1" class="box"></div>
+        <div id="draggable2" class="box"></div>
+        <div>
+        <ul id="text">
+            </ul> 
+            <ul id="number">
+            </ul>
+        </div>
+        <script type="text/javascript">
+            var id_1 = '#number';
+            var id_2 = '#text';
+            var id = 0;
+            $().ready(function () {
+                for (var i = 1; i <= 10; i++) {
+                    $(id_1).append(
+                            "<li id='" + i + "' class='integer'>" +
+                            i + "</li>");
+                    $('#' + i).draggable();
+                }
+            });
+            var number = [
+                Spanish = ["Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "Ocho", "Nueve", "Dies"]
+            ];
+        </div>    
+        
+    </body>
+</html>
