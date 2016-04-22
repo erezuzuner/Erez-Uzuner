@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <script type="text/javascript">
+            window.trackingUtils=function(i,n,l,j,k,h){var m={};m.addRefUrls=function(a,b,c,w){var t=new RegExp("^http://.*(amazon|endless|myhabit|amazonwireless|javari|smallparts)\\.(com|ca|co\\.jp|de|fr|co\\.uk|cn|it|es)/.*","i"),g=(window.location!=window.parent.location)?document.referrer:document.location,u,d,v,e,f=function(o){return o&&encodeURIComponent(o).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;")};for(e=0;e<a.length;e++){a[e].rel="nofollow";u=String(a[e].href);if(d=u.match(t)){v=u+"&ref-refURL="+f(g);a[e].href=m.addTrackingParameters(v,b,c,w)}}};m.addLinkCode=function(a,c,b){if(typeof c==="string"&&c!=""){return a+b+"linkCode="+c}else{return a}};m.addTrackingId=function(a,c,b){if(typeof c==="string"&&c!=""){return a+b+"tag="+c}else{return a}};m.addLinkId=function(a,b,c){if(typeof b==="string"&&b!=""){return a+c+"linkId="+b}else{return a}};m.addImpressionToken=function(a,b){if(typeof h==="string"&&h!=""){return a+b+"imprToken="+h}else{return a}};m.addTrackingParameters=function(a,b,d,e,c){return m.addLinkId(m.addTrackingId(m.addLinkCode(m.addImpressionToken(m.addRefMarker(a,c,"/")+"?",""),d,"&"),e,"&"),b,"&")};m.addRefMarker=function(a,c,b){if(typeof c==="string"&&c!=""){return a+b+"ref="+c}else{return a}};m.makeForesterCall=function(a){var e,d,b,c="";a.refUrl=document.location.href;if(typeof JSON!=="undefined"){b=JSON.stringify(a)}else{if(typeof amzn_assoc_utils!=="undefined"){b=amzn_assoc_utils.stringify(a)}else{return}}if(typeof a.logType!=="undefined"){c="&logType="+a.logType}e=n+"?cb="+(new Date()).getTime()+c+"&p="+encodeURIComponent(b);d=j+"?assoc_payload="+encodeURIComponent(b);(new Image()).src=e;(new Image()).src=d};m.recordImpression=function(b,c,a){a.linkCode=b;a.trackingId=c;m.makeForesterCall(a);(new Image()).src=l+"?l="+b+"&t="+c+"&o="+i+"&cb="+(new Date()).getTime()};m.addAAXClickUrls=function(c){var a,b,d;if(typeof c==="undefined"||typeof k==="undefined"){return}for(b=0;b<c.length;b++){d=String(c[b].href);a=k+d;c[b].href=a}};m.addAAXClickUrl=function(a){if(typeof a==="undefined"||typeof a==="undefined"){return a}return k+a};m.updateLinks=function(c,a){var b,d;if(typeof a!=="function"){return}for(b=0;b<c.length;b++){d=String(c[b].href);c[b].href=a(d)}};return m};window.trackingUtils_nonUS=function(f,e,g){var h={};h.recordImpression=function(b,c,a){a.linkCode=b;a.trackingId=c;h.makeForesterCall(a);(new Image()).src=g+"?l="+b+"&t="+c+"&o="+f+"&cb="+(new Date()).getTime()};h.makeForesterCall=function(a){var d,b,c="";a.refUrl=document.location.href;if(typeof JSON!=="undefined"){b=JSON.stringify(a)}else{if(typeof amzn_assoc_utils!=="undefined"){b=amzn_assoc_utils.stringify(a)}else{return}}if(typeof a.logType!=="undefined"){c="&logType="+a.logType}d=e+"?cb="+(new Date()).getTime()+c+"&p="+encodeURIComponent(b);(new Image()).src=d};h.addAAXClickUrls=function(a){};h.addImpressionToken=function(a,b){return a};return h};window.nativeAdLoader=function(l,r){var t={},m=l.widgetServerURL+"/widgets/resolve?t="+l.transform+"&f="+l.filters+"&region="+l.region,n=l.viewabilityJSURL,s=(typeof l.excludePhrases==="undefined"||l.excludePhrases==="")?[]:l.excludePhrases.split(","),q=document.createEvent("Event"),v={auto:{ACAP:"",Fallbacks:"",RedButton:"",OptimizationModel:"",VisualSearch:"",TextLinks:"",Similarity:"",ses:"",vtp:"",sdp:"",unk:""},search:{Search:"",Fallbacks:"",RedButton:""},manual:{PublisherCuration:"",Fallbacks:"",RedButton:""}},u={USD:function(a){return"$"+a}},p=l.trackingUtils,o=function(){return l.refMarkerPrefix};q.initEvent("reloadWidget",true,true);t.getFormattedPrice=function(a,b){if(typeof b==="undefined"||!(b in u)||typeof u[b]!=="function"){return"$"+a.toFixed(2)}else{return u[b](a.toFixed(2))}};t.updatePrices=function(a){var b;if(typeof a.offerSummary!=="undefined"&&a.offerSummary.value!=null&&a.offerSummary.value["parentASIN"]){b=a.offerSummary.value["defaultDisplayOffer"]["value"]["currency"];a.price=t.getFormattedPrice(a.offerSummary.value["defaultDisplayOffer"]["value"]["offerPrice"],b)+" - "+t.getFormattedPrice(a.offerSummary.value["defaultDisplayOffer"]["value"]["ceilingPrice"]["value"],b);a.listPrice="";a.primeEligible=false}else{if(a.listPriceAmount.value!=null){a.listPrice=t.getFormattedPrice(a.listPriceAmount.value,a.currency)}else{a.listPrice=""}if(typeof a.offerSummary!=="undefined"&&a.offerSummary.value!=null&&a.offerSummary.value["numOffers"]>0){a.price=t.getFormattedPrice(a.offerSummary.value["defaultDisplayOffer"]["value"]["offerPrice"],a.offerSummary.value["defaultDisplayOffer"]["value"]["currency"]);if(a.listPriceAmount.value!=null&&a.offerSummary.value["defaultDisplayOffer"]["value"]["offerPrice"]>a.listPriceAmount.value){a.listPrice=""}}else{if(a.priceAmount.value!=null){a.price=t.getFormattedPrice(a.priceAmount.value,a.currency);if(a.listPriceAmount.value!=null&&a.priceAmount.value>a.listPriceAmount.value){a.listPrice=""}}else{a.price=""}}}return a};t.separateFallbacks=function(b){var a=0,c={recommendations:[],fallbacks:[]};if(typeof b!=="undefined"){for(a=0;a<b.length;a++){if(b[a]["sourceName"]==="Fallbacks"){c.fallbacks.push(b[a])}else{c.recommendations.push(b[a])}}}return c};t.filterOrganicItems=function(a){var c=[],b;for(b=0;b<a.length;b++){if(a[b]["sourceName"] in v[l.adMode]){c.push(a[b])}}return c};t.addClass=function(a,d){var b=(a.getAttribute("class")||"")+" "+d;var c=b.split(" ");c=c.filter(function(f,e){return f&&c.indexOf(f)==e});a.setAttribute("class",c.join(" "))};t.removeClass=function(d,c){var a=(d.getAttribute("class")||"").split(" ");var b=a.indexOf(c);while(b>-1){a.splice(b,1);b=a.indexOf(c)}d.setAttribute("class",a.join(" "))};t.removeAllEventHandlers=function(a){var b;for(b=0;b<a.length;b++){a[b]["el"].removeEventListener(a[b]["t"],a[b]["h"],false)}};t.addEventHandler=function(c,a,b,d){var e,f;for(e=0;e<a.length;e++){for(f=0;f<b.length;f++){if(window.addEventListener){a[e].addEventListener(b[f],d,false)}else{a[e].attachEvent("on"+b[f],d)}c.push({el:a[e],h:d,t:b[f]})}}};t.getWidgetInstance=function(){return{update:function(b,a){var c;for(c in b){if(b.hasOwnProperty(c)){l[c]=b[c]}}if(typeof a!=="undefined"){for(c in a){if(a.hasOwnProperty(c)){delete l[c]}}}document.dispatchEvent(q)},reloadAsSearch:function(a,d,b,f){var e={itemRefs:["java.util.ArrayList",[["com.amazon.widgets.items.KeyPhrase",{id:a,category:d,type:"SEARCH",sourceType:["com.amazon.widgets.relevance.Search",{}]}],["com.amazon.widgets.items.CategoriesRef",{type:"CATEGORY",id:"Category",sourceType:["com.amazon.widgets.relevance.EmptyRelevanceSource",{}]}]]]};l.itemRefs=JSON.stringify(e);l.adMode="search";l.defaultSearchPhrase=a;l.defaultCategory=d;for(var c in b){if(b.hasOwnProperty(c)){l[c]=b[c]}}if(typeof f!=="undefined"){for(c in f){if(f.hasOwnProperty(c)){delete l[c]}}}r.destroy();r.init()}}};t.addClickHandlers=function(g,e,d,f,b,i,a){var c,h=false,j=false;t.addEventHandler(g,[e],["touchstart"],function(){h=false});t.addEventHandler(g,[e],["touchmove"],function(){h=true});t.addEventHandler(g,[e],["click","touchend"],function(k){var x;if(h){return}x=p.addTrackingParameters(d,l.linkId,l.linkCode,l.trackingId,o()+b);p.makeForesterCall({logType:"smart_clicks",adMode:l.adMode,linkId:l.linkId,trackingId:l.trackingId,linkCode:l.linkCode,itemType:"ASIN",itemId:f.asin,source:f.sourceName,rs:(typeof f.originalReference!=="undefined"&&typeof f.originalReference.rs!=="undefined")?(f.originalReference.rs):""});if(!j){setTimeout(function(){j=false},500);j=true;window.open(p.addAAXClickUrl(x))}k.stopPropagation();k.preventDefault()});if(!i&&!a){t.addEventHandler(g,[e],["mouseenter","focus"],function(){c=setTimeout(function(){p.makeForesterCall({logType:"smart_hovers",adMode:l.adMode,linkId:l.linkId,trackingId:l.trackingId,linkCode:l.linkCode,itemType:"ASIN",itemId:f.asin,source:f.sourceName,rs:(typeof f.originalReference.rs!=="undefined")?(f.originalReference.rs):""})},2000)});t.addEventHandler(g,[e],["mouseleave","blur"],function(){clearTimeout(c)})}};t.init=function(c){var b=false,a=function(h){var f=t.separateFallbacks(h.ASIN),x=function(w){return typeof w.imageUrl!=="undefined"&&w.imageUrl!==""&&(typeof l.excludeItems==="undefined"||l.excludeItems===""||l.excludeItems.indexOf(w.asin)<0)&&s.reduce(function(A,B){return A&&w.title.indexOf(B)<0},true)},k=f.recommendations.filter(x).map(t.updatePrices),j=f.fallbacks.filter(x).map(t.updatePrices),i=document.getElementsByClassName("amzn-native-brand-text"),d=h.CATEGORY,g,e=function(){if(!b){b=true;r.render({results:k},false,!g);b=false}};if(l.searchBarPresent){r.initSearchBar(d)}g=r.render({results:k,allItems:h},true);if(!g){k=t.filterOrganicItems(k).concat(j);r.render({results:k},true,true);Array.prototype.forEach.call(i,function(w){w.innerHTML=l.poweredByAmazonString})}window.addEventListener("resize",e,false);document.addEventListener("reloadWidget",e,false)};if(l.itemRefs===""&&l.resolutionPending){r.hide(true,l.itemRefs,"Item Refs is empty");return}if(l.resolutionPending){window["showItems_"+l.slotNum]=function(f){var g=JSON.parse(f),d=(typeof l.resolvedItems==="undefined"||l.resolvedItems==="")?{}:JSON.parse(decodeURIComponent(l.resolvedItems.replace(/\+/g," "))),e=(function(){for(var h in g){if(g.hasOwnProperty(h)){d[h]=g[h]}}return d}());a(e)};amzn_assoc_utils.loadRemoteScript(m+"&jsonp=showItems_"+l.slotNum+"&p="+encodeURIComponent(l.itemRefs))}else{a((typeof l.resolvedItems==="undefined"||l.resolvedItems==="")?{}:JSON.parse(decodeURIComponent(l.resolvedItems.replace(/\+/g," "))))}if(typeof window.amznassoccsm!=="undefined"){window.amznassoccsm.rmN(c,l.impressionId,window,document)}else{amzn_assoc_utils.loadRemoteScript(n,function(){if(l.aaxUrl!=""){window.amznassoccsm.host=l.aaxUrl.replace("//","")}window.amznassoccsm.rmN(c,l.impressionId,window,document)})}};return t};window.nativeAd=function(U){var T={},E=window.nativeAdLoader(U,T),R=U.trackingUtils,A=function(){return U.size.split("x")[0]},S=function(){return U.size.split("x")[1]},H,y=10,N=200,D=200,V=250,O=4,z=1,P=document.getElementById("amzn-native-ad-"+U.slotNum),I=document.querySelector("#amzn-native-ad-"+U.slotNum+" div.amzn-native-products-list"),J=false,F=false,B={auto:{ACAP:"",Fallbacks:"",RedButton:"",OptimizationModel:"",VisualSearch:"",TextLinks:"",Similarity:"",ses:"",vtp:"",sdp:"",unk:"",dpfen:"",sefen:""},search:{Search:"",Fallbacks:"",RedButton:""},manual:{PublisherCuration:"",Fallbacks:"",RedButton:""}},K={auto:75,search:100,manual:100},M={ACAP:function(a,b){if(typeof a.originalReference!=="undefined"){b.rs=a.originalReference.rs}return b}},Q=["KEYWORD","CONTENT_CATEGORY"],L=[],G=function(){return U.refMarkerPrefix},C=function(){return{regionId:U.regionInt,ref:G(),adMode:U.adMode,linkCode:U.linkCode,trackingId:U.trackingId,linkId:U.linkId,country:U.viewerCountry,deviceType:U.deviceType,searchBarPresent:U.searchBarPresent,defaultCategory:U.defaultCategory,defaultSearchPhrase:U.defaultSearchPhrase,givenWidth:A(),givenHeight:S(),givenRows:U.rows}};if(U.divName!==""){H=document.getElementById(U.divName)}else{H=document.querySelector("#amzn-native-ad-"+U.slotNum).parentNode.parentNode}if(U.deviceType=="MOBILE_BROWSER"){J=true}else{if(U.deviceType=="TABLET_BROWSER"){F=true}}if(U.adMode==="search"&&U.defaultSearchPhrase===""){B.search={Search:"",ACAP:"",Fallbacks:""}}if(U.adMode!="search"){U.defaultSearchPhrase=""}if(U.theme==="dark"){E.addClass(P,"amzn-native-dark")}T.removeAllEventHandlers=function(){E.removeAllEventHandlers(L);L=[]};T.displayPriceRow=function(b,c){var f=b.getElementsByClassName("amzn-native-product-offer-price"),h=b.getElementsByClassName("amzn-native-product-list-price"),g=b.getElementsByClassName("amzn-native-product-prime"),a=b.getElementsByClassName("amzn-native-product-attr-container"),d,e=0;if(a&&a.length>0){d=a[0].offsetWidth;if(f&&f.length>0){if(!c.price||c.price===""){f[0].style.display="none"}else{f[0].style.display="inline-block";e=e+f[0].offsetWidth}}if(h&&h.length>0){if(!c.listPrice||c.listPrice===""||c.listPrice===c.price){h[0].style.display="none"}else{h[0].style.display="inline-block";e=e+h[0].offsetWidth}}if(g&&g.length>0){if(!c.primeEligible){g[0].style.display="none"}else{g[0].style.display="inline-block";e=e+g[0].offsetWidth}}if(h&&h.length>0&&h[0].style.display!=="none"&&e>=d){h[0].style.display="none"}}};T.renderProduct=function(f,h,c,r,t,q,j,m){var k=c,b=h.getElementsByClassName("amzn-native-product-title")[0],i=h.getElementsByClassName("amzn-native-product-image")[0],a=h.getElementsByClassName("amzn-native-product-image-container")[0],o=h.getElementsByClassName("amzn-native-product-offer-price"),g=h.getElementsByClassName("amzn-native-product-list-price"),u=h.getElementsByClassName("amzn-native-product-prime"),s=h.getElementsByClassName("amzn-native-product-stars"),p=h.getElementsByClassName("amzn-native-product-rating"),d=h.getElementsByClassName("amzn-native-product-review-count"),l=h.getElementsByClassName("amzn-native-product-bs-highlight"),n,v,e="pr_"+k.sourceName.substr(0,3).toLowerCase()+"_"+((m)?q:(r+"_"+t));b.innerHTML=k.title;h.setAttribute("title",k.title);h.style.display="block";b.setAttribute("href",R.addTrackingParameters(k.detailPageUrl,U.linkId,U.linkCode,U.trackingId,G()+e));if(typeof U.styleOverrides!=="undefined"&&typeof U.styleOverrides.link!=="undefined"&&U.styleOverrides.link!==""){b.style.cssText=U.styleOverrides.link}i.setAttribute("src",k.imageUrl);i.onload=function(){var w=i.width,ab=i.height,ad=w/ab,ae=a.offsetWidth-10,x,ac=a.offsetHeight-5,af;if(ad>1&&ae>w&&ac>ab){x=ae/ad;if(x>ac){af="SY"+parseInt(ac)}else{af="SL"+ae}i.setAttribute("src",k.imageUrl.replace(/\._AC_SL\d+_\./,"._AC_"+af+"_."));k.imageUrl=i.getAttribute("src")}};if(o&&o.length>0){if(k.price===""&&k.listPrice!==""){k.price=k.listPrice}o[0].innerText=k.price;o[0].textContent=k.price;if(g&&g.length>0){g[0].innerText=k.listPrice;g[0].textContent=k.listPrice}if(typeof U.styleOverrides!=="undefined"&&typeof U.styleOverrides.text!=="undefined"&&U.styleOverrides.text!==""){o[0].style.cssText=U.styleOverrides.text;if(g&&g.length>0){g[0].style.cssText=U.styleOverrides.text}}}if(l&&l.length>0){if(j&&k.sourceName=="BestSellers"){l[0].style.display="block"}else{l[0].style.display="none"}}if(s&&s.length>0){n=parseFloat(k.rating);v=parseInt(k.numReviews);if(typeof k.rating!=="undefined"&&!isNaN(n)&&v>0){s[0].style.width=parseFloat(k.rating)*20+"%";d[0].innerText="("+k.numReviews+")";d[0].textContent=d[0].innerText}else{p[0].style.display="none"}}f.appendChild(h);T.displayPriceRow(h,k);E.addClickHandlers(L,h,k.detailPageUrl,k,e,J,F)};T.getOrganicCount=function(a,d){var b,c=0;for(b=0;b<a.length;b++){if(a[b]["sourceName"] in d[U.adMode]){c=c+1}}return c};T.getPowerOfTwoColumnCount=function(b,c){var a=parseInt(b/c);Math.log2=Math.log2||function(d){return Math.log(d)/Math.LN2};return Math.pow(2,parseInt(Math.log2(a)))};T.getNextLowestPowerOfTwo=function(a){return a>>1};T.computeLayoutOneRow=function(a,f,e){var b=a,d=(b-1)*y,c=(f-d)/b;if(c>=e&&c<=V){return{columnCount:b,columnWidth:c,columnWidthPercentage:((c*100)/f)}}else{return{columnCount:0,columnWidth:0,columnWidthPercentage:0}}};T.computeLayout=function(f,a){var d,e,b,c=T.getPowerOfTwoColumnCount(f,a);if(c>O){c=O}if(isNaN(c)){return{columnCount:0,columnWidth:0,columnWidthPercentage:0}}d=(c-1)*y;e=(f-d)/c;if(e<a){c=T.getNextLowestPowerOfTwo(c);d=(c-1)*y;e=(f-d)/c}b=(e*100)/f;return{columnCount:c,columnWidth:e,columnWidthPercentage:b}};T.computeLayoutCarousel=function(c,f){var g,e,d,a=100,i=parseInt(c/f),h,b;if(isNaN(i)){return{columnCount:0,columnWidth:0,columnWidthPercentage:0}}if(!J){g=((i-1)*y)+a;e=(c-g)/i;if(e<f){i=i-1;g=((i-1)*y)+a;e=(c-g)/i}}else{e=f;g=(i*y);h=c-g-(i*e);b=(h/e)*100;if(b<25||b>75){i=i-1;g=(i*y);e=(c-g)/(i+0.5)}}d=(e*100)/c;return{columnCount:i,columnWidth:e,columnWidthPercentage:d}};T.computeOrganicPercentage=function(e,d,c){var a,b=0;for(a=0;a<e.length;a++){if(e[a]["sourceName"] in c[U.adMode]){b=b+1}}return(b/d)*100};T.renderSearchBar=function(d,k){var f,b=30,a=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-header"),g=((a==null)?0:U.headerDistance),e=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-category-trigger-area"),m=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-category-selection"),i=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-suggestions-holder"),j=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-search-input-set"),l=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-search-bar-content"),c=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar span.amzn-native-search-input"),h=document.querySelector("#amzn-native-ad-"+U.slotNum+".amzn-native-container");if(U.searchBarPresent){if(!J&&d<N){f=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar");f.setAttribute("class",f.getAttribute("class")+" amzn-native-search-bar-narrow");return false}else{if(k){T.trackFormSubmission()}if(!J){if(d<466){E.addClass(h,"amzn-native-ad-search-mobile");c.style.width="100%"}else{E.removeClass(h,"amzn-native-ad-search-mobile")}}j.style.width=(l.offsetWidth-40)+"px";if(e&&e.style.display=="none"){c.style.width="100%"}else{c.style.width=(j.offsetWidth-e.offsetWidth-0.5)+"px"}i.style.width=c.offsetWidth+"px";if(e&&m&&e.offsetWidth>D){m.style.width=e.offsetWidth+"px"}if(U.searchBarPosition==="top"){m.style.top=((a==null)?0:a.offsetHeight)+g+b+"px";i.style.top=((a==null)?0:a.offsetHeight)+g+b+"px"}i.style.left=c.offsetLeft+"px";return true}}return false};T.addCarouselEvents=function(d){var a;if(J){for(a=0;a<I.children.length;a++){I.children[a].style["float"]="none";I.children[a].style.display="inline-block";I.children[a].style.display="-moz-inline-box"}}else{var b=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-carousel-leftarrow");var c=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-carousel-rightarrow");b.setAttribute("class","amzn-sprite  amzn-native-carousel-leftarrow amzn-native-carousel-leftarrowdefault");c.setAttribute("class","amzn-sprite  amzn-native-carousel-rightarrow amzn-native-carousel-rightarrowdefault");z=1;if(!J&&!F){b.addEventListener("mouseover",function(){b.setAttribute("class","amzn-sprite  amzn-native-carousel-leftarrow amzn-native-carousel-leftarrowhover");return true},false);b.addEventListener("mouseleave",function(){b.setAttribute("class","amzn-sprite  amzn-native-carousel-leftarrow amzn-native-carousel-leftarrowdefault");return true});c.addEventListener("mouseover",function(){c.setAttribute("class","amzn-sprite  amzn-native-carousel-rightarrow amzn-native-carousel-rightarrowhover");return true},false);c.addEventListener("mouseleave",function(){c.setAttribute("class","amzn-sprite  amzn-native-carousel-rightarrow amzn-native-carousel-rightarrowdefault");return true})}E.addEventHandler(L,[b],["click","touchend"],function(e){T.makeVisible(d,-1);R.makeForesterCall({logType:"smart_carousel_leftclick",adMode:U.adMode,linkId:U.linkId,trackingId:U.trackingId,linkCode:U.linkCode});e.stopPropagation();e.preventDefault()});E.addEventHandler(L,[c],["click","touchend"],function(e){T.makeVisible(d,1);R.makeForesterCall({logType:"smart_carousel_rightclick",adMode:U.adMode,linkId:U.linkId,trackingId:U.trackingId,linkCode:U.linkCode});e.stopPropagation();e.preventDefault()})}E.removeClass(P,"amzn-native-ad-top-branding")};T.isSearchBoxMode=function(a){return(typeof a==="undefined"||a.length==0||a[0]["sourceName"]!="Search")};T.renderSearchBox=function(b){var c=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-header-text"),a=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar input.amzn-native-search");if(P.offsetWidth<300){P.style.display="none";return false}if(!U.searchBarPresent){return false}I.style.display="none";E.addClass(P,"amzn-native-ad-search-box");if(c){c.innerHTML=U.searchAmazonBackupString}if(b){a.value=""}return T.renderSearchBar(P.offsetWidth,false)};T.isCarousel=function(e,a,c,b){var d=T.getOrganicCount(c,b);return e<=1&&a<d&&U.enableCarousel};T.convertToAAXClickUrls=function(){var a=document.querySelectorAll("#amzn-native-ad-"+U.slotNum+" a");R.addAAXClickUrls(a)};T.renderFallbacks=function(b,a){T.render(b,a,true)};T.render=function(a,w,m){var i,l,p,q,c,o,g,h=0,e,r=false,b=false,v=false,aa=parseInt(U.rows),j=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-header .amzn-native-header-text"),d=4,Z,n=128,s=0,u=[],ab=[],f=document.querySelector("#amzn-native-ad-"+U.slotNum+" div.amzn-native-products-list"),k=navigator.userAgent,x=false,t;P.style.display="block";if(aa<=0){aa=1}if(A()!="auto"){P.style.width=A()+"px"}else{P.style.width="auto"}g=P.getBoundingClientRect().width;I.style.display="block";T.renderSearchBar(P.offsetWidth,w);if(typeof U.styleOverrides!=="undefined"&&typeof U.styleOverrides.header!=="undefined"&&U.styleOverrides.header!==""&&j!=null){j.style.cssText=U.styleOverrides.header}if(typeof a.results!=="undefined"){u=a.results.map(function(X){var W={itemType:"ASIN",id:X.asin,source:X.sourceName};if(typeof M[X.sourceName]!=="undefined"){return M[X.sourceName](X,W)}else{return W}});e=T.computeLayout(g,n);d=e.columnCount;Z=e.columnWidth;h=e.columnWidthPercentage;if(d==0){T.hide(w,u,"Not enough width",m,a.allItems);return false}while(aa>0&&d*aa>a.results.length){aa=aa-1}while(aa>0&&T.computeOrganicPercentage(a.results,aa*d,B)<K[U.adMode]){aa=aa-1}r=T.isCarousel(aa,d,a.results,B);if(r&&J){if(!w){T.convertToAAXClickUrls();return true}x=(k.match(/.*Android.*Firefox.*/))?true:false;if(x){f.style.whiteSpace="normal"}}if(aa==0){if(!r){e=T.computeLayoutOneRow(T.getOrganicCount(a.results,B),g,n);if(e.columnCount==0){T.hide(w,u,"Not enough products for even one row",m,a.allItems);return false}else{v=true;d=e.columnCount;Z=e.columnWidth;h=e.columnWidthPercentage;b=true;aa=1}}else{aa=1}}if(r){v=true;if(!J){E.addClass(P,"amzn-native-carousel")}else{E.addClass(P,"amzn-native-carousel-mobile")}e=T.computeLayoutCarousel(g,n);if(e.columnCount==0){T.hide(w,u,"Not enough products for carousel",m,a.allItems);return false}d=e.columnCount;Z=e.columnWidth;h=e.columnWidthPercentage}while(I.children.length>0){c=I.removeChild(I.children[0])}z=1;l=-1;for(i=0;i<a.results.length;i++){p=a.results[i];if(v&&!(p.sourceName in B[U.adMode])){continue}l++;if(p.sourceName in B[U.adMode]){q={itemType:"ASIN",id:p.asin,source:p.sourceName,extraInfo:p.extraInfo};if(typeof M[p.sourceName]!=="undefined"){ab.push(M[p.sourceName](p,q))}else{ab.push(q)}}o=c.cloneNode(true);o.style.marginLeft="0px";if(!r&&l%d!=0){o.style.marginLeft=y+"px"}if(r&&J&&l!=0){o.style.marginLeft=y+"px"}if(r&&J){o.style.width=Z+"px"}else{o.style.width=h+"%"}T.renderProduct(I,o,p,Math.floor(l/d),l%d,l,U.adMode=="auto"||U.adMode=="search",r)}s=aa*d;if(r||b){s=l+1}if(r&&!J){T.renderSearchBar(P.offsetWidth-100,false)}if(!J&&!F){T.addTabIndices(s)}T.adjustTitles(s);t=T.adjustHeight(aa,r,w,m);if(t<=0){return false}else{if(!r&&!b){s=t*d}}if(!J&&!F){T.addHoverStates()}if(w){T.refreshFooter();if(r){T.addCarouselEvents(d)}T.done(ab,a.allItems,s)}if(!J){if(r){T.makeVisible(d,0)}else{T.removeInvisibleCardsFromDOM(s)}}}else{T.hide(w,u,"No ASIN results at all",m,a.allItems);return false}T.convertToAAXClickUrls();return true};T.addTabIndices=function(c){var b=document.querySelectorAll("#amzn-native-ad-"+U.slotNum+" div.amzn-native-products-list div.amzn-native-product"),a;for(a=0;a<b.length;a++){if(a<c){b[a].setAttribute("tabindex","0")}else{b[a].setAttribute("tabindex","-1")}}};T.trackFormSubmission=function(){var b=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-search-bar-content form"),a=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-search-bar-content form input.amzn-native-search"),c=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-search-bar-content .amzn-native-category-data");E.addEventHandler(L,[b],["submit"],function(){R.makeForesterCall({logType:"smart_search_submits",linkId:U.linkId,trackingId:U.trackingId,adMode:U.adMode,linkCode:U.linkCode,keyphrase:a.value,category:c.value})})};T.adjustHeight=function(j,b,i,l){var e=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-content"),d=Number.MAX_VALUE,g,a,m=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-header"),f=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar"),h=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-brand-bottom"),c=((m==null)?0:(m.offsetHeight+U.headerDistance))+((f==null)?0:f.offsetHeight)+h.offsetHeight,k=document.querySelector("#amzn-native-ad-"+U.slotNum+" div.amzn-native-products-list div.amzn-native-product").offsetHeight;if(window.getComputedStyle(H).height!=="auto"){d=H.offsetHeight}if(S()!=="auto"){d=parseInt(S())}for(a=j;a>0;a--){g=c+(k*a+y*(a-1));if(g<=d){break}}if(a==0){T.hide(i,"",j+" rows cannot fit into available height of "+d,l)}else{if(!(J&&b)){e.style.height=(k*a+y*(a-1)+2)+"px"}}return a};T.getTallestElement=function(f,c,i,e){var d,h,g=0,b=-1,a;for(a=0;a<c;a++){d=f[a].getElementsByClassName(i)[0];if(typeof d!=="undefined"){h=d.clientHeight||d.scrollHeight;if(g<h){g=h;b=a}}}if(typeof e!=="undefined"&&g==0){g=e;b=0}return{i:b,h:g}};T.truncateTitles=function(g){var f=document.querySelectorAll("#amzn-native-ad-"+U.slotNum+" div.amzn-native-products-list div.amzn-native-product"),a,b,d,j,i,e,c,k,h=0;for(k=0;k<g;k++){a=f[k].getElementsByClassName("amzn-native-product-title-container")[0];b=f[k].getElementsByClassName("amzn-native-product-attr-container");d=a.getElementsByTagName("a")[0];j=d.innerHTML;i=a.offsetTop;if(b&&b.length>0){e=b[0].offsetTop}else{e=f[k].offsetHeight}c=a.offsetHeight;h=0;while(i+c>e&&c>45){if(j===""||h++>10000){break}j=j.substring(0,j.length-5);d.innerHTML=j+"&hellip;";c=a.offsetHeight}}};T.removeInvisibleCardsFromDOM=function(b){var a;for(a=b;a<I.children.length;a++){I.children[a].style.display="none"}};T.makeVisible=function(b,g){var e,f=0,a,d=-1,c;if(g>0){while(f<b){f++;z++;if(z>I.children.length){z=z%I.children.length}}}else{if(g<0){while(f<b){f++;z--;if(z==0){z=I.children.length}}}}a=z+b-1;if(a>I.children.length){d=a%I.children.length}for(e=1;e<=I.children.length;e++){I.children[e-1].style.marginLeft="0px";if(e<=d||(e>=z&&e<=a)){I.children[e-1].style.display="list-item";if(e!=z){I.children[e-1].style.marginLeft="10px"}}else{I.children[e-1].style.display="none"}}e=0;while(e<d){e++;c=I.removeChild(I.children[0]);I.appendChild(c);z--;if(z==0){z=I.children.length}}};T.adjustTitles=function(g){var e=document.querySelectorAll("#amzn-native-ad-"+U.slotNum+" div.amzn-native-products-list div.amzn-native-product"),c,d,a,b,h,i,f;if(e&&e.length){h=T.getTallestElement(e,g,"amzn-native-product-title-container");i=T.getTallestElement(e,g,"amzn-native-product-attr-container");c=e[h.i].getElementsByClassName("amzn-native-product-title-container")[0];if(i.i>=0){d=e[i.i].getElementsByClassName("amzn-native-product-attr-container")}if(d&&d.length>0){f=d[0].offsetTop}else{f=e[h.i].offsetHeight}a=c.offsetTop+(h.h>U.maxTitleHeight?U.maxTitleHeight:h.h)-f+10;for(b=0;b<g;b++){e[b].style.height=(e[b].offsetHeight+a)+"px"}T.truncateTitles(g)}};T.addHoverStates=function(){var a=document.querySelectorAll("#amzn-native-ad-"+U.slotNum+" div.amzn-native-products-list div.amzn-native-product"),b=document.querySelectorAll("#amzn-native-ad-"+U.slotNum+" .amzn-native-brand .amzn-native-brand-logo-default");E.addEventHandler(L,a,["mouseover","focus"],function(){var c;for(c=0;c<b.length;c++){E.removeClass(b[c],"amzn-native-brand-logo-default");E.addClass(b[c],"amzn-native-brand-logo-hover")}return true});E.addEventHandler(L,a,["mouseleave","blur"],function(){var c;for(c=0;c<b.length;c++){E.removeClass(b[c],"amzn-native-brand-logo-hover");E.addClass(b[c],"amzn-native-brand-logo-default")}return true})};T.refreshFooter=function(){var b=document.querySelectorAll("#amzn-native-ad-"+U.slotNum+" .amzn-native-brand-logo-link"),a;for(a=0;a<b.length;a++){b[a].href=R.addTrackingParameters(U.amznUrl,U.linkId,U.linkCode,U.trackingId,G()+"logo")}};T.suggestionBox=function(){var k={},b=0,a=10,l=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-search"),d=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar select.amzn-native-category-data"),h=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-search-input .amzn-native-suggestions-holder"),e=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-search-bar-content form"),i=false,g=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-category-selection"),j=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-category-selection div.amzn-native-category-items"),c=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-category-trigger"),f=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-category-trigger-area");k.selectSuggestion=function(m){var o=h.getElementsByClassName("amzn-native-search-suggestion selected")[0],n;if(o){o.setAttribute("class","amzn-native-search-suggestion")}if(m.target.nodeName=="SPAN"){n=m.target.parentNode}else{n=m.target}b=n.getAttribute("data-index");n.setAttribute("class","amzn-native-search-suggestion selected")};k.showSuggestions=function(n){var o=l.value,m=false;if(typeof window["complete_"+U.slotNum]!=="function"){window["complete_"+U.slotNum]=function(){var t=[],s,r=[],w,v,x,p,u,q,X=0;if(typeof window.completion==="object"){t=window.completion[1];r=window.completion[2];if(!(t&&t.length>0)){k.hide();return}while(h.children.length>0){s=h.removeChild(h.children[0])}for(v=0;v<t.length&&X<10;v++){w=s.cloneNode(true);p=w.getElementsByClassName("amzn-native-search-suggestion-text");u=w.getElementsByClassName("amzn-native-search-suggestion-cat");w.setAttribute("class","amzn-native-search-suggestion");if(v==0){w.setAttribute("class",w.getAttribute("class")+" selected");b=0}w.setAttribute("data-index",X+"");p[0].innerHTML=t[v];u[0].innerHTML="";h.appendChild(w);X++;if(r[v]&&r[v]["nodes"]){for(x=0;x<r[v]["nodes"].length;x++){q=j.querySelector("div[data-value="+r[v]["nodes"][x]["alias"]+"]");if(q){w=s.cloneNode(true);w.setAttribute("class","amzn-native-search-suggestion");w.setAttribute("data-index",X+"");w.setAttribute("data-category",r[v]["nodes"][x]["alias"]);h.appendChild(w);p=w.getElementsByClassName("amzn-native-search-suggestion-text");u=w.getElementsByClassName("amzn-native-search-suggestion-cat");p[0].innerHTML=t[v];u[0].innerHTML="in "+r[v]["nodes"][x].name;X++}}}}a=X;if(g.style.display==="block"){g.style.display="none"}h.style.display="block"}};E.addEventHandler(L,[h],["mouseover"],function(p){if(p.target.nodeName=="DIV"&&p.target!=h){k.selectSuggestion(p)}});E.addEventHandler(L,[h,document],["touchstart"],function(){m=false});E.addEventHandler(L,[h,document],["touchmove"],function(){m=true});E.addEventHandler(L,[h],["touchend","click"],function(p){if(m){return}if((p.target.nodeName=="DIV"||p.target.nodeName=="SPAN")&&p.target!=h){p.stopPropagation();p.cancelBubble=true;p.preventDefault();k.selectSuggestion(p);k.loadSearch();e.submit();R.makeForesterCall({logType:"smart_search_submits",linkId:U.linkId,trackingId:U.trackingId,adMode:U.adMode,linkCode:U.linkCode,keyphrase:l.value,category:d.value})}})}if(!(o&&o.length>=1)||n.keyCode==38||n.keyCode==40||n.keyCode==13||n.keyCode==9||n.keyCode==27){return}i=true;amzn_assoc_utils.loadRemoteScript(U.completionServiceURL+"?method=completion&q="+o+"&search-alias="+d.value+"&mkt="+U.regionInt+"&fb=1&xcat=0&x=complete_"+U.slotNum+"&sc=1&nocache="+(new Date()).getTime())};k.getSelectedIndex=function(){return b};k.navigate=function(n){var m=h.getElementsByClassName("amzn-native-search-suggestion selected")[0];if(m){m.setAttribute("class","amzn-native-search-suggestion")}if(n==38){if(b==0){b=a-1}else{b--}}else{if(n==40){if(b==a-1){b=0}else{b++}}}h.children[b].setAttribute("class","amzn-native-search-suggestion selected")};k.hide=function(){h.style.display="none";i=false};k.loadSearch=function(){var o=h.getElementsByClassName("amzn-native-search-suggestion selected")[0],p=o.getElementsByClassName("amzn-native-search-suggestion-cat")[0].innerHTML,m=o.getElementsByClassName("amzn-native-search-suggestion-text")[0].innerHTML,q,n;if(!i){return}l.value=m;if(p!=""){n=j.querySelectorAll("div.amzn-native-category-item");for(q=0;q<n.length;q++){E.removeClass(n[q],"current");if(n[q].getAttribute("data-value")==o.getAttribute("data-category")){c.innerHTML=n[q].innerHTML;E.addClass(n[q],"current");f.setAttribute("title",n[q].innerHTML);d.value=n[q].getAttribute("data-value")}}}k.hide();T.renderSearchBar(P.offsetWidth,false)};return k};T.initSearchBar=function(m){var d=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar select.amzn-native-category-data"),l=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-category-selection"),j=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar div.amzn-native-category-items"),c=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-category-trigger"),f=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-category-trigger-area"),i=document.querySelector("#amzn-native-ad-"+U.slotNum+" .amzn-native-search-bar .amzn-native-search"),b,a,e,h,g=false,n=T.suggestionBox();for(a=0;a<m.length;a++){e=document.createElement("div");e.setAttribute("class","amzn-native-category-item");h=document.createElement("option");e.innerHTML=m[a].text;h.setAttribute("value",m[a]["searchAlias"]);if(a==0){b=e}e.setAttribute("data-value",m[a]["searchAlias"]);e.setAttribute("data-search-index",m[a]["awsSearchIndex"]);e.setAttribute("data-index",a+"");j.appendChild(e);d.appendChild(h);if(m[a]["awsSearchIndex"]==U.defaultCategory){b=e}}E.addClass(b,"current");E.addEventHandler(L,[j,f,document],["touchstart"],function(){g=false});E.addEventHandler(L,[j,f,document],["touchmove"],function(){g=true});E.addEventHandler(L,[j],["click","touchend"],function(o){var p,q;if(g){return}if(o.target&&o.target.nodeName=="DIV"){q=j.querySelectorAll("div.amzn-native-category-item");for(p=0;p<q.length;p++){E.removeClass(q[p],"current");if(q[p]==o.target){E.addClass(q[p],"current");c.innerHTML=q[p].innerHTML;f.setAttribute("title",q[p].innerHTML);d.value=q[p].getAttribute("data-value");T.renderSearchBar(P.offsetWidth,false)}}l.style.display="none"}o.preventDefault()});c.innerHTML=b.innerHTML;f.setAttribute("title",b.innerHTML);d.value=b.getAttribute("data-value");E.addEventHandler(L,[f],["click","touchend"],function(o){if(g){return}o.stopPropagation();o.preventDefault();if(l.style.display==="none"){l.style.display="block";f.focus();n.hide()}else{l.style.display="none"}return false});E.addEventHandler(L,[f],["keydown"],function(s){var p,t,u,o=j.children.length,q,r;if(l.style.display!=="block"){return}if(s.keyCode==9||s.keyCode==13||s.keyCode==27||s.keyCode==38||s.keyCode==40){s.preventDefault();if(s.keyCode==27){l.style.display="none"}else{if(s.keyCode==13||s.keyCode==9){p=j.getElementsByClassName("current")[0];c.innerHTML=p.innerHTML;f.setAttribute("title",p.innerHTML);d.value=p.getAttribute("data-value");l.style.display="none";T.renderSearchBar(P.offsetWidth,false)}else{if(s.keyCode==40||s.keyCode==38){p=j.getElementsByClassName("current")[0];u=parseInt(p.getAttribute("data-index"));if(s.keyCode==40){u++;if(u>o-1){u=0}}else{u--;if(u<0){u=o-1}}t=j.children[u];q=t.getBoundingClientRect();r=j.getBoundingClientRect();if(q.bottom-r.bottom>0){j.scrollTop+=q.bottom-r.bottom}else{if(r.top-q.top>0){j.scrollTop-=(r.top-q.top)}}E.removeClass(p,"current");E.addClass(t,"current")}}}}});E.addEventHandler(L,[document],["click","touchend"],function(){if(g){return}l.style.display="none";n.hide()});if(typeof U.defaultSearchPhrase!=="undefined"&&U.defaultSearchPhrase!=""){try{i.value=decodeURIComponent(U.defaultSearchPhrase.replace(/\+/g," "))}catch(k){console.log("Malformed content in the search phrase");i.value=U.defaultSearchPhrase.replace(/\+/g," ")}}E.addEventHandler(L,[i],["keyup"],n.showSuggestions);E.addEventHandler(L,[i],["keydown"],function(o){if(o.keyCode==38||o.keyCode==40){o.stopImmediatePropagation();o.preventDefault()}if(o.keyCode==13){n.loadSearch()}else{if(o.keyCode==9||o.keyCode==27){n.hide()}else{if(o.keyCode==40||o.keyCode==38){n.navigate(o.keyCode)}}}})};T.done=function(a,f,b){var d={},e=C(),c;for(c in e){if(e.hasOwnProperty(c)){d[c]=e[c]}}d.visibleItemCount=b;d.actualWidth=P.offsetWidth;d.actualHeight=P.offsetHeight;d.axfExperiment=U.expDetails;d.items=a;d.logType="smart_impressions";if(typeof f!=="undefined"){for(c=0;c<Q.length;c++){if(typeof f[Q[c]]!=="undefined"){d[Q[c]]=f[Q[c]].map(function(g){return{id:g.originalReference.id,rs:g.originalReference.rs}})}}}R.recordImpression(U.linkCode,U.trackingId,d);window["amzn_assoc_client_cb_"+U.slotNum]({type:"onload",data:{},widget:E.getWidgetInstance()})};T.hide=function(b,g,d,c,a){var e={},i=C(),h;if(U.adMode=="search"){h=T.renderSearchBox(b);if(!h){P.style.display="none"}else{if(h&&b){T.refreshFooter();T.convertToAAXClickUrls();d=d+" - replaced by search bar"}}}else{P.style.display="none"}if(b){for(var f in i){if(i.hasOwnProperty(f)){e[f]=i[f]}}e.logType="smart_hide"+(c?"_fallback":"");e.availableItems=g;e.reason=d;if(typeof a!=="undefined"){for(f=0;f<Q.length;f++){if(typeof a[Q[f]]!=="undefined"){e[Q[f]]=a[Q[f]].map(function(j){return{id:j.originalReference.id,rs:j.originalReference.rs}})}}}R.makeForesterCall(e);if(!c){window["amzn_assoc_client_cb_"+U.slotNum]({type:"onhide",data:{reason:d},widget:E.getWidgetInstance()})}}};T.destroy=function(){T.removeAllEventHandlers()};T.init=function(){P.style.display="none";E.init(P)};return T};window.nativeAd({slotNum:"0",widgetServerURL:"//ws-na.amazon-adsystem.com",completionServiceURL:"//completion.amazon.com/search/complete",viewabilityJSURL:"http://g-ecx.images-amazon.com/images/G/01/associates/widgets/20070822/js/amznassocview.js",aaxUrl:"//aax-us-east.amazon-adsystem.com",region:"US",asins:"B00YQB5JPK,B01CF79P92,B00JUI6LUQ,B01BYGN8SO,B01BPO17QA,1493692615,B01B1W9240,B0084HJE0S,B01BTJDPU2,1491924462,B01CKSSAGU,B01AOC3IVQ,B015LUTWA2,B00LX6D0PM,B016GXMMJQ,B01ABCBBZY,B017YZ6CYG",adMode:"manual",itemRefs:"",resolvedItems:"%7B%22ASIN%22%3A%5B%7B%22asin%22%3A%22B00YQB5JPK%22%2C%22title%22%3A%22JavaScript%3A+Crash+Course+-+The+Ultimate+Beginner%27s+Course+to+Learning+JavaScript+Programming+in+Under+12+Hours%22%2C%22priceAmount%22%3A%7B%22value%22%3A3.99%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F51AMBxh%252BoUL._AC_SL115_.jpg%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2FJavaScript-Ultimate-Beginners-Learning-Programming-ebook%2Fdp%2FB00YQB5JPK%22%2C%22primeEligible%22%3Afalse%2C%22rating%22%3A4.5%2C%22numReviews%22%3A19%2C%22originalReference%22%3A%7B%22id%22%3A%22B00YQB5JPK%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.10%22%2C%22cl%22%3A%22SUBCAT%22%2C%22cr%22%3A%22.03%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3A%7B%22primeEligibleDisplayOffer%22%3A%7B%22value%22%3Anull%7D%2C%22outOfStock%22%3Afalse%2C%22parentASIN%22%3Afalse%2C%22numPrimeEligibleOffers%22%3A0%2C%22numOffers%22%3A1%2C%22originalReference%22%3A%7B%22id%22%3A%22B00YQB5JPK%22%2C%22src%22%3A%7B%7D%7D%2C%22type%22%3A%22ASIN_OFFER%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%7D%2C%22defaultDisplayOffer%22%3A%7B%22value%22%3A%7B%22offerPrice%22%3A3.99%2C%22ceilingPrice%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22primeEligible%22%3Afalse%7D%7D%7D%7D%7D%2C%7B%22asin%22%3A%22B01CF79P92%22%2C%22title%22%3A%22Javascript%3A+QuickStart+Guide+-+Effective+Javascript+Programming+%28Javascript%2C+Programming%2C+HTML%2C+CSS%29%22%2C%22priceAmount%22%3A%7B%22value%22%3A2.99%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F51KlkwySgqL._AC_SL115_.jpg%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2FJavascript-QuickStart-Guide-Effective-Programming-ebook%2Fdp%2FB01CF79P92%22%2C%22primeEligible%22%3Afalse%2C%22rating%22%3A4.5%2C%22numReviews%22%3A55%2C%22originalReference%22%3A%7B%22id%22%3A%22B01CF79P92%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.00%22%2C%22cl%22%3A%22NIL%22%2C%22cr%22%3A%22.00%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3A%7B%22primeEligibleDisplayOffer%22%3A%7B%22value%22%3Anull%7D%2C%22outOfStock%22%3Afalse%2C%22parentASIN%22%3Afalse%2C%22numPrimeEligibleOffers%22%3A0%2C%22numOffers%22%3A1%2C%22originalReference%22%3A%7B%22id%22%3A%22B01CF79P92%22%2C%22src%22%3A%7B%7D%7D%2C%22type%22%3A%22ASIN_OFFER%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%7D%2C%22defaultDisplayOffer%22%3A%7B%22value%22%3A%7B%22offerPrice%22%3A2.99%2C%22ceilingPrice%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22primeEligible%22%3Afalse%7D%7D%7D%7D%7D%2C%7B%22asin%22%3A%22B00JUI6LUQ%22%2C%22title%22%3A%22Thinking+in+JavaScript%22%2C%22priceAmount%22%3A%7B%22value%22%3A0.0%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F51Jn%252B%252BniruL._AC_SL115_.jpg%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2FThinking-JavaScript-Aravind-Shenoy-ebook%2Fdp%2FB00JUI6LUQ%22%2C%22primeEligible%22%3Afalse%2C%22rating%22%3A3.5%2C%22numReviews%22%3A42%2C%22originalReference%22%3A%7B%22id%22%3A%22B00JUI6LUQ%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.00%22%2C%22cl%22%3A%22ASIN%22%2C%22cr%22%3A%22.00%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3A%7B%22primeEligibleDisplayOffer%22%3A%7B%22value%22%3Anull%7D%2C%22outOfStock%22%3Afalse%2C%22parentASIN%22%3Afalse%2C%22numPrimeEligibleOffers%22%3A0%2C%22numOffers%22%3A1%2C%22originalReference%22%3A%7B%22id%22%3A%22B00JUI6LUQ%22%2C%22src%22%3A%7B%7D%7D%2C%22type%22%3A%22ASIN_OFFER%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%7D%2C%22defaultDisplayOffer%22%3A%7B%22value%22%3A%7B%22offerPrice%22%3A0.0%2C%22ceilingPrice%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22primeEligible%22%3Afalse%7D%7D%7D%7D%7D%2C%7B%22asin%22%3A%22B01BYGN8SO%22%2C%22title%22%3A%22JavaScript%3A+A+Beginner%27s+Guide+to+Learning+the+Basics+of+Javascript+Programming%21%22%2C%22priceAmount%22%3A%7B%22value%22%3A2.99%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F5102oPhdgPL._AC_SL115_.jpg%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2FJavaScript-Beginners-Learning-Javascript-Programming-ebook%2Fdp%2FB01BYGN8SO%22%2C%22primeEligible%22%3Afalse%2C%22rating%22%3A4.5%2C%22numReviews%22%3A94%2C%22originalReference%22%3A%7B%22id%22%3A%22B01BYGN8SO%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.00%22%2C%22cl%22%3A%22NIL%22%2C%22cr%22%3A%22.00%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3A%7B%22primeEligibleDisplayOffer%22%3A%7B%22value%22%3Anull%7D%2C%22outOfStock%22%3Afalse%2C%22parentASIN%22%3Afalse%2C%22numPrimeEligibleOffers%22%3A0%2C%22numOffers%22%3A1%2C%22originalReference%22%3A%7B%22id%22%3A%22B01BYGN8SO%22%2C%22src%22%3A%7B%7D%7D%2C%22type%22%3A%22ASIN_OFFER%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%7D%2C%22defaultDisplayOffer%22%3A%7B%22value%22%3A%7B%22offerPrice%22%3A2.99%2C%22ceilingPrice%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22primeEligible%22%3Afalse%7D%7D%7D%7D%7D%2C%7B%22asin%22%3A%22B01BPO17QA%22%2C%22title%22%3A%22JAVASCRIPT%3A+Easy+JavaScript+Programming+For+Beginners.+Your+Step-By-Step+Guide+to+Learning+JavaScript+Programming+%28JavaScript+Series%29%22%2C%22priceAmount%22%3A%7B%22value%22%3A0.99%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F51n4QwOMRtL._AC_SL115_.jpg%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2FJAVASCRIPT-JavaScript-Programming-Beginners-Step-By-Step-ebook%2Fdp%2FB01BPO17QA%22%2C%22primeEligible%22%3Afalse%2C%22rating%22%3A4.5%2C%22numReviews%22%3A22%2C%22originalReference%22%3A%7B%22id%22%3A%22B01BPO17QA%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.00%22%2C%22cl%22%3A%22NIL%22%2C%22cr%22%3A%22.00%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3A%7B%22primeEligibleDisplayOffer%22%3A%7B%22value%22%3Anull%7D%2C%22outOfStock%22%3Afalse%2C%22parentASIN%22%3Afalse%2C%22numPrimeEligibleOffers%22%3A0%2C%22numOffers%22%3A1%2C%22originalReference%22%3A%7B%22id%22%3A%22B01BPO17QA%22%2C%22src%22%3A%7B%7D%7D%2C%22type%22%3A%22ASIN_OFFER%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%7D%2C%22defaultDisplayOffer%22%3A%7B%22value%22%3A%7B%22offerPrice%22%3A0.99%2C%22ceilingPrice%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22primeEligible%22%3Afalse%7D%7D%7D%7D%7D%2C%7B%22asin%22%3A%221493692615%22%2C%22title%22%3A%22A+Software+Engineer+Learns+HTML5%2C+JavaScript+and+jQuery%22%2C%22priceAmount%22%3A%7B%22value%22%3A13.49%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3A14.99%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F41nopSDM91L._AC_SL115_.jpg%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2FSoftware-Engineer-Learns-JavaScript-jQuery%2Fdp%2F1493692615%22%2C%22primeEligible%22%3Atrue%2C%22rating%22%3A4.5%2C%22numReviews%22%3A152%2C%22originalReference%22%3A%7B%22id%22%3A%221493692615%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.39%22%2C%22cl%22%3A%22ASIN%22%2C%22cr%22%3A%22.02%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3A%7B%22primeEligibleDisplayOffer%22%3A%7B%22value%22%3A%7B%22offerPrice%22%3A13.49%2C%22ceilingPrice%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22primeEligible%22%3Atrue%7D%7D%2C%22outOfStock%22%3Afalse%2C%22parentASIN%22%3Afalse%2C%22numPrimeEligibleOffers%22%3A1%2C%22numOffers%22%3A20%2C%22originalReference%22%3A%7B%22id%22%3A%221493692615%22%2C%22src%22%3A%7B%7D%7D%2C%22type%22%3A%22ASIN_OFFER%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%7D%2C%22defaultDisplayOffer%22%3A%7B%22value%22%3A%7B%22offerPrice%22%3A13.49%2C%22ceilingPrice%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22primeEligible%22%3Atrue%7D%7D%7D%7D%7D%2C%7B%22asin%22%3A%22B01B1W9240%22%2C%22title%22%3A%22JavaScript%3A+The+Ultimate+Beginner%27s+Guide%21%22%2C%22priceAmount%22%3A%7B%22value%22%3A3.99%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F41i2vTdytXL._AC_SL115_.jpg%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2FJavaScript-The-Ultimate-Beginners-Guide-ebook%2Fdp%2FB01B1W9240%22%2C%22primeEligible%22%3Afalse%2C%22rating%22%3A4.5%2C%22numReviews%22%3A85%2C%22originalReference%22%3A%7B%22id%22%3A%22B01B1W9240%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.00%22%2C%22cl%22%3A%22NIL%22%2C%22cr%22%3A%22.00%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3A%7B%22primeEligibleDisplayOffer%22%3A%7B%22value%22%3Anull%7D%2C%22outOfStock%22%3Afalse%2C%22parentASIN%22%3Afalse%2C%22numPrimeEligibleOffers%22%3A0%2C%22numOffers%22%3A1%2C%22originalReference%22%3A%7B%22id%22%3A%22B01B1W9240%22%2C%22src%22%3A%7B%7D%7D%2C%22type%22%3A%22ASIN_OFFER%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%7D%2C%22defaultDisplayOffer%22%3A%7B%22value%22%3A%7B%22offerPrice%22%3A3.99%2C%22ceilingPrice%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22primeEligible%22%3Afalse%7D%7D%7D%7D%7D%2C%7B%22asin%22%3A%22B0084HJE0S%22%2C%22title%22%3A%22JavaScript+and+HTML5+Now%22%2C%22priceAmount%22%3A%7B%22value%22%3A0.0%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F51rvw49RejL._AC_SL115_.jpg%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2FJavaScript-HTML5-Now-Kyle-Simpson-ebook%2Fdp%2FB0084HJE0S%22%2C%22primeEligible%22%3Afalse%2C%22rating%22%3A3.5%2C%22numReviews%22%3A174%2C%22originalReference%22%3A%7B%22id%22%3A%22B0084HJE0S%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.00%22%2C%22cl%22%3A%22SUBCAT%22%2C%22cr%22%3A%22.04%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3A%7B%22primeEligibleDisplayOffer%22%3A%7B%22value%22%3Anull%7D%2C%22outOfStock%22%3Afalse%2C%22parentASIN%22%3Afalse%2C%22numPrimeEligibleOffers%22%3A0%2C%22numOffers%22%3A1%2C%22originalReference%22%3A%7B%22id%22%3A%22B0084HJE0S%22%2C%22src%22%3A%7B%7D%7D%2C%22type%22%3A%22ASIN_OFFER%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%7D%2C%22defaultDisplayOffer%22%3A%7B%22value%22%3A%7B%22offerPrice%22%3A0.0%2C%22ceilingPrice%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22primeEligible%22%3Afalse%7D%7D%7D%7D%7D%2C%7B%22asin%22%3A%22B01BTJDPU2%22%2C%22title%22%3A%22JavaScript%3A+Learn+JavaScript+in+Two+Hours+-The+Beginners+Choice+for+JavaScript+Programming+%28Javascript%2C+Javascript+Programming%29%22%2C%22priceAmount%22%3A%7B%22value%22%3A2.99%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F41WPWUhT6kL._AC_SL115_.jpg%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2FJavaScript-Beginners-Choice-Programming-Javascript-ebook%2Fdp%2FB01BTJDPU2%22%2C%22primeEligible%22%3Afalse%2C%22rating%22%3A4.5%2C%22numReviews%22%3A47%2C%22originalReference%22%3A%7B%22id%22%3A%22B01BTJDPU2%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.00%22%2C%22cl%22%3A%22NIL%22%2C%22cr%22%3A%22.00%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3A%7B%22primeEligibleDisplayOffer%22%3A%7B%22value%22%3Anull%7D%2C%22outOfStock%22%3Afalse%2C%22parentASIN%22%3Afalse%2C%22numPrimeEligibleOffers%22%3A0%2C%22numOffers%22%3A1%2C%22originalReference%22%3A%7B%22id%22%3A%22B01BTJDPU2%22%2C%22src%22%3A%7B%7D%7D%2C%22type%22%3A%22ASIN_OFFER%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%7D%2C%22defaultDisplayOffer%22%3A%7B%22value%22%3A%7B%22offerPrice%22%3A2.99%2C%22ceilingPrice%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22primeEligible%22%3Afalse%7D%7D%7D%7D%7D%2C%7B%22asin%22%3A%221491924462%22%2C%22title%22%3A%22You+Don%27t+Know+JS%3A+Up+%26+Going%22%2C%22priceAmount%22%3A%7B%22value%22%3A4.99%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3A4.99%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F41FhogvNebL._AC_SL115_.jpg%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2FYou-Dont-Know-JS-Going%2Fdp%2F1491924462%22%2C%22primeEligible%22%3Atrue%2C%22rating%22%3A4.5%2C%22numReviews%22%3A29%2C%22originalReference%22%3A%7B%22id%22%3A%221491924462%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.00%22%2C%22cl%22%3A%22ASIN%22%2C%22cr%22%3A%22.00%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3A%7B%22primeEligibleDisplayOffer%22%3A%7B%22value%22%3A%7B%22offerPrice%22%3A4.99%2C%22ceilingPrice%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22primeEligible%22%3Atrue%7D%7D%2C%22outOfStock%22%3Afalse%2C%22parentASIN%22%3Afalse%2C%22numPrimeEligibleOffers%22%3A1%2C%22numOffers%22%3A20%2C%22originalReference%22%3A%7B%22id%22%3A%221491924462%22%2C%22src%22%3A%7B%7D%7D%2C%22type%22%3A%22ASIN_OFFER%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%7D%2C%22defaultDisplayOffer%22%3A%7B%22value%22%3A%7B%22offerPrice%22%3A4.99%2C%22ceilingPrice%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22primeEligible%22%3Atrue%7D%7D%7D%7D%7D%2C%7B%22asin%22%3A%22B01CKSSAGU%22%2C%22title%22%3A%22Javascript%3A+The+Ultimate+Guide+to+Javascript+Programming+and+Computer+Hacking+%28javascript+for+beginners%2C+how+to+program%2C+hacking+exposed%2C+hacking%2C+how+...+HTML%2C+Coding%2C+CSS%2C+Java%2C+PHP+Book+12%29%22%2C%22priceAmount%22%3A%7B%22value%22%3A3.99%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F51YH7U16KtL._AC_SL115_.jpg%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2FJavascript-Ultimate-Programming-javascript-beginners-ebook%2Fdp%2FB01CKSSAGU%22%2C%22primeEligible%22%3Afalse%2C%22rating%22%3A5.0%2C%22numReviews%22%3A18%2C%22originalReference%22%3A%7B%22id%22%3A%22B01CKSSAGU%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.00%22%2C%22cl%22%3A%22NIL%22%2C%22cr%22%3A%22.00%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3Anull%7D%7D%2C%7B%22asin%22%3A%22B01AOC3IVQ%22%2C%22title%22%3A%22Javascript+Artificial+Intelligence%3A+Made+Easy%2C+w%2F+Essential+Programming%3B+Create+your+*+Problem+Solving+*+Algorithms%21+TODAY%21+w%2F+Machine+Learning+%26+Data+Structures+%28Artificial+Intelligence+Series%29%22%2C%22priceAmount%22%3A%7B%22value%22%3A2.99%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F51OSNhtboSL._AC_SL115_.jpg%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2FJavascript-Artificial-Intelligence-Programming-Algorithms-ebook%2Fdp%2FB01AOC3IVQ%22%2C%22primeEligible%22%3Afalse%2C%22rating%22%3A4.5%2C%22numReviews%22%3A45%2C%22originalReference%22%3A%7B%22id%22%3A%22B01AOC3IVQ%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.00%22%2C%22cl%22%3A%22NIL%22%2C%22cr%22%3A%22.00%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3Anull%7D%7D%2C%7B%22asin%22%3A%22B015LUTWA2%22%2C%22title%22%3A%22JavaScript+Pro+Quick+Guide%22%2C%22priceAmount%22%3A%7B%22value%22%3A0.0%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3A0.99%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F61SFqL9QcAL._AC_SL115_.png%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2F808-Apps-JavaScript-Quick-Guide%2Fdp%2FB015LUTWA2%22%2C%22primeEligible%22%3Afalse%2C%22rating%22%3A5.0%2C%22numReviews%22%3A8%2C%22originalReference%22%3A%7B%22id%22%3A%22B015LUTWA2%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.00%22%2C%22cl%22%3A%22SUBCAT%22%2C%22cr%22%3A%22.01%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3Anull%7D%7D%2C%7B%22asin%22%3A%22B00LX6D0PM%22%2C%22title%22%3A%22Programming+Windows+Store+Apps+with+HTML%2C+CSS%2C+and+JavaScript+%28Developer+Reference%29%22%2C%22priceAmount%22%3A%7B%22value%22%3A0.0%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F51WSPmWh9UL._AC_SL115_.jpg%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2FProgramming-Windows-JavaScript-Developer-Reference-ebook%2Fdp%2FB00LX6D0PM%22%2C%22primeEligible%22%3Afalse%2C%22rating%22%3A4.0%2C%22numReviews%22%3A12%2C%22originalReference%22%3A%7B%22id%22%3A%22B00LX6D0PM%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.00%22%2C%22cl%22%3A%22ASIN%22%2C%22cr%22%3A%22.00%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3Anull%7D%7D%2C%7B%22asin%22%3A%22B016GXMMJQ%22%2C%22title%22%3A%22Javascript%3A+Programming%2C+Master%27s+Handbook%3B+A+TRUE+Beginner%27s+Guide%21+Problem+Solving%2C+Code%2C+Data+Science%2C++Data+Structures+%26+Algorithms+%28Code+like+a+PRO+...+Handbook+Series%2C+jquery%2C+php%2C+app+design%2C%29%22%2C%22priceAmount%22%3A%7B%22value%22%3A2.99%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F51QyFqgxn7L._AC_SL115_.jpg%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2FJavascript-Programming-Beginners-Structures-Algorithms-ebook%2Fdp%2FB016GXMMJQ%22%2C%22primeEligible%22%3Afalse%2C%22rating%22%3A4.5%2C%22numReviews%22%3A35%2C%22originalReference%22%3A%7B%22id%22%3A%22B016GXMMJQ%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.17%22%2C%22cl%22%3A%22GL%22%2C%22cr%22%3A%22.10%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3Anull%7D%7D%2C%7B%22asin%22%3A%22B01ABCBBZY%22%2C%22title%22%3A%22JavaScript%3A+Academy+-+Simple+JavaScript+Programming+For+Beginners.+Your+Step-By-Step+Guide+to+Learning+JavaScript+Programming+Inside+%26+Out+%28FREE+Books%2C+...+Parts%2C+JavaScript+The+Definitive+Guide%29%22%2C%22priceAmount%22%3A%7B%22value%22%3A0.99%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F41HRNfbAf4L._AC_SL115_.jpg%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2FJavaScript-Programming-Beginners-Step-By-Step-Definitive-ebook%2Fdp%2FB01ABCBBZY%22%2C%22primeEligible%22%3Afalse%2C%22rating%22%3A4.0%2C%22numReviews%22%3A8%2C%22originalReference%22%3A%7B%22id%22%3A%22B01ABCBBZY%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.00%22%2C%22cl%22%3A%22NIL%22%2C%22cr%22%3A%22.00%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3Anull%7D%7D%2C%7B%22asin%22%3A%22B017YZ6CYG%22%2C%22title%22%3A%22Javascript%3A+The+Ultimate+guide+for+javascript+programming+%28javascript+for+beginners%2C+how+to+program%2C+software+development%2C+basic+javascript%2C+browsers%2C+...+Developers%2C+Coding%2C+CSS%2C+Java%2C+PHP+Book+7%29%22%2C%22priceAmount%22%3A%7B%22value%22%3A2.99%7D%2C%22listPriceAmount%22%3A%7B%22value%22%3Anull%7D%2C%22currency%22%3A%22USD%22%2C%22imageUrl%22%3A%22http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F41%252BzBB%252Bca7L._AC_SL115_.jpg%22%2C%22detailPageUrl%22%3A%22http%3A%2F%2Fwww.amazon.com%2FJavascript-javascript-programming-development-Developers-ebook%2Fdp%2FB017YZ6CYG%22%2C%22primeEligible%22%3Afalse%2C%22rating%22%3A4.5%2C%22numReviews%22%3A19%2C%22originalReference%22%3A%7B%22id%22%3A%22B017YZ6CYG%22%2C%22src%22%3A%7B%7D%7D%2C%22adultProduct%22%3Afalse%2C%22type%22%3A%22ASIN%22%2C%22sourceName%22%3A%22PublisherCuration%22%2C%22extraInfo%22%3A%7B%22opc%22%3A%22.00%22%2C%22cl%22%3A%22NIL%22%2C%22cr%22%3A%22.00%22%7D%2C%22offerSummary%22%3A%7B%22value%22%3Anull%7D%7D%5D%2C%22CATEGORY%22%3A%5B%7B%22browseNode%22%3A%220%22%2C%22textStringId%22%3A%22assoc-aws-category-all-short%22%2C%22searchAlias%22%3A%22aps%22%2C%22awsSearchIndex%22%3A%22All%22%2C%22order%22%3A0.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22All%22%7D%2C%7B%22browseNode%22%3A%2216261631%22%2C%22textStringId%22%3A%22assoc-pl_digital_video_33686%22%2C%22searchAlias%22%3A%22instant-video%22%2C%22awsSearchIndex%22%3A%22UnboxVideo%22%2C%22order%22%3A500.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Amazon+Instant+Video%22%7D%2C%7B%22browseNode%22%3A%2251569011%22%2C%22textStringId%22%3A%22assoc-pl_apparel_3765%22%2C%22searchAlias%22%3A%22apparel%22%2C%22awsSearchIndex%22%3A%22Apparel%22%2C%22order%22%3A1000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Apparel+%26+Accessories%22%7D%2C%7B%22browseNode%22%3A%222619525011%22%2C%22textStringId%22%3A%22assoc-pl_appliances%22%2C%22searchAlias%22%3A%22appliances%22%2C%22awsSearchIndex%22%3A%22Appliances%22%2C%22order%22%3A1500.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Appliances%22%7D%2C%7B%22browseNode%22%3A%222617941011%22%2C%22textStringId%22%3A%22assoc-pl_arts_crafts%22%2C%22searchAlias%22%3A%22arts-crafts%22%2C%22awsSearchIndex%22%3A%22ArtsAndCrafts%22%2C%22order%22%3A1750.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Arts%2C+Crafts+%26+Sewing%22%7D%2C%7B%22browseNode%22%3A%2215684181%22%2C%22textStringId%22%3A%22assoc-pl_auto_17879%22%2C%22searchAlias%22%3A%22automotive%22%2C%22awsSearchIndex%22%3A%22Automotive%22%2C%22order%22%3A2000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Automotive%22%7D%2C%7B%22browseNode%22%3A%22165796011%22%2C%22textStringId%22%3A%22assoc-pl_baby_3766%22%2C%22searchAlias%22%3A%22baby-products%22%2C%22awsSearchIndex%22%3A%22Baby%22%2C%22order%22%3A3000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Baby%22%7D%2C%7B%22browseNode%22%3A%223760911%22%2C%22textStringId%22%3A%22assoc-pl_beauty_3767%22%2C%22searchAlias%22%3A%22beauty%22%2C%22awsSearchIndex%22%3A%22Beauty%22%2C%22order%22%3A4000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Beauty%22%7D%2C%7B%22browseNode%22%3A%221000%22%2C%22textStringId%22%3A%22assoc-pl_books_3768%22%2C%22searchAlias%22%3A%22stripbooks%22%2C%22awsSearchIndex%22%3A%22Books%22%2C%22order%22%3A5000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Books%22%7D%2C%7B%22browseNode%22%3A%229003130011%22%2C%22textStringId%22%3A%22assoc-pl_collectible_coins_3328%22%2C%22searchAlias%22%3A%22collectibles%22%2C%22awsSearchIndex%22%3A%22Collectibles%22%2C%22order%22%3A5500.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Collectible+Coins%22%7D%2C%7B%22browseNode%22%3A%2213900861%22%2C%22textStringId%22%3A%22assoc-pl_photo_3769%22%2C%22searchAlias%22%3A%22photo%22%2C%22awsSearchIndex%22%3A%22Photo%22%2C%22order%22%3A6000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Camera+%26+Photo%22%7D%2C%7B%22browseNode%22%3A%222335752011%22%2C%22textStringId%22%3A%22assoc-pl_wifeless_phones_3770%22%2C%22searchAlias%22%3A%22mobile%22%2C%22awsSearchIndex%22%3A%22Wireless%22%2C%22order%22%3A7000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Cell+Phones+%26+Accessories%22%7D%2C%7B%22browseNode%22%3A%2236632%22%2C%22textStringId%22%3A%22classical_fr_search_option_3326%22%2C%22searchAlias%22%3A%22classical%22%2C%22awsSearchIndex%22%3A%22Classical%22%2C%22order%22%3A8000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Classical+Music%22%7D%2C%7B%22browseNode%22%3A%2213900871%22%2C%22textStringId%22%3A%22assoc-pl_pc_hardware_3771%22%2C%22searchAlias%22%3A%22pc-hardware%22%2C%22awsSearchIndex%22%3A%22PCHardware%22%2C%22order%22%3A9000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Computers%22%7D%2C%7B%22browseNode%22%3A%22130%22%2C%22textStringId%22%3A%22assoc-pl_dvd_3773%22%2C%22searchAlias%22%3A%22dvd%22%2C%22awsSearchIndex%22%3A%22DVD%22%2C%22order%22%3A11000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22DVD%22%7D%2C%7B%22browseNode%22%3A%22172282%22%2C%22textStringId%22%3A%22assoc-pl_electronics_3774%22%2C%22searchAlias%22%3A%22electronics%22%2C%22awsSearchIndex%22%3A%22Electronics%22%2C%22order%22%3A12000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Electronics%22%7D%2C%7B%22browseNode%22%3A%225088769011%22%2C%22textStringId%22%3A%22assoc-pl_entertainment_collectibles%22%2C%22searchAlias%22%3A%22na-collectibles-us%22%2C%22awsSearchIndex%22%3A%22Collectibles%22%2C%22order%22%3A12350.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Entertainment+Collectibles%22%7D%2C%7B%22browseNode%22%3A%22979455011%22%2C%22textStringId%22%3A%22assoc-pl_game_downloads_69958%22%2C%22searchAlias%22%3A%22videogames%22%2C%22awsSearchIndex%22%3A%22VideoGames%22%2C%22order%22%3A12700.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Game+Downloads%22%7D%2C%7B%22browseNode%22%3A%222238192011%22%2C%22textStringId%22%3A%22assoc-pl_gift_cards%22%2C%22searchAlias%22%3A%22gift-cards%22%2C%22awsSearchIndex%22%3A%22GiftCards%22%2C%22order%22%3A13000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Gift+Cards%22%7D%2C%7B%22browseNode%22%3A%2216310101%22%2C%22textStringId%22%3A%22assoc-pl_grocery_20698%22%2C%22searchAlias%22%3A%22grocery%22%2C%22awsSearchIndex%22%3A%22Grocery%22%2C%22order%22%3A14000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Grocery+%26+Gourmet+Food%22%7D%2C%7B%22browseNode%22%3A%221055398%22%2C%22textStringId%22%3A%22assoc-pl_garden_3776%22%2C%22searchAlias%22%3A%22garden%22%2C%22awsSearchIndex%22%3A%22HomeGarden%22%2C%22order%22%3A15000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Home+%26+Garden%22%7D%2C%7B%22browseNode%22%3A%223760901%22%2C%22textStringId%22%3A%22assoc-pl_hpc_3777%22%2C%22searchAlias%22%3A%22hpc%22%2C%22awsSearchIndex%22%3A%22HealthPersonalCare%22%2C%22order%22%3A16000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Health+%26+Personal+Care%22%7D%2C%7B%22browseNode%22%3A%2216310091%22%2C%22textStringId%22%3A%22assoc-pl_industrial_33360%22%2C%22searchAlias%22%3A%22industrial%22%2C%22awsSearchIndex%22%3A%22Industrial%22%2C%22order%22%3A17000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Industrial+%26+Scientific%22%7D%2C%7B%22browseNode%22%3A%223367581%22%2C%22textStringId%22%3A%22assoc-pl_jewelry_52658%22%2C%22searchAlias%22%3A%22jewelry%22%2C%22awsSearchIndex%22%3A%22Jewelry%22%2C%22order%22%3A18000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Jewelry%22%7D%2C%7B%22browseNode%22%3A%22133140011%22%2C%22textStringId%22%3A%22assoc-pl_kindle_47672%22%2C%22searchAlias%22%3A%22digital-text%22%2C%22awsSearchIndex%22%3A%22KindleStore%22%2C%22order%22%3A18500.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Kindle+Store%22%7D%2C%7B%22browseNode%22%3A%22284507%22%2C%22textStringId%22%3A%22assoc-pl_kitchen_3779%22%2C%22searchAlias%22%3A%22kitchen%22%2C%22awsSearchIndex%22%3A%22Kitchen%22%2C%22order%22%3A19000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Kitchen+%26+Housewares%22%7D%2C%7B%22browseNode%22%3A%22599858%22%2C%22textStringId%22%3A%22assoc-pl_magazines_3780%22%2C%22searchAlias%22%3A%22magazines%22%2C%22awsSearchIndex%22%3A%22Magazines%22%2C%22order%22%3A20000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Magazine+Subscriptions%22%7D%2C%7B%22browseNode%22%3A%2210272111%22%2C%22textStringId%22%3A%22assoc-pl_miscellaneous_5241%22%2C%22searchAlias%22%3A%22misc%22%2C%22awsSearchIndex%22%3A%22Miscellaneous%22%2C%22order%22%3A20500.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Miscellaneous%22%7D%2C%7B%22browseNode%22%3A%22195209011%22%2C%22textStringId%22%3A%22assoc-pl_digital_music_45831%22%2C%22searchAlias%22%3A%22digital-music%22%2C%22awsSearchIndex%22%3A%22MP3Downloads%22%2C%22order%22%3A20600.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22MP3+Downloads%22%7D%2C%7B%22browseNode%22%3A%22301668%22%2C%22textStringId%22%3A%22assoc-pl_music_3781%22%2C%22searchAlias%22%3A%22popular%22%2C%22awsSearchIndex%22%3A%22Music%22%2C%22order%22%3A21000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Music%22%7D%2C%7B%22browseNode%22%3A%2251575011%22%2C%22textStringId%22%3A%22assoc-pl_mi_3782%22%2C%22searchAlias%22%3A%22mi%22%2C%22awsSearchIndex%22%3A%22MusicalInstruments%22%2C%22order%22%3A22000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Musical+Instruments%22%7D%2C%7B%22browseNode%22%3A%221064954%22%2C%22textStringId%22%3A%22assoc-pl_office_products_34075%22%2C%22searchAlias%22%3A%22office-products%22%2C%22awsSearchIndex%22%3A%22OfficeProducts%22%2C%22order%22%3A22500.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Office+Products%22%7D%2C%7B%22browseNode%22%3A%222619533011%22%2C%22textStringId%22%3A%22assoc-pl_pet_supplies_34076%22%2C%22searchAlias%22%3A%22pets%22%2C%22awsSearchIndex%22%3A%22PetSupplies%22%2C%22order%22%3A22620.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Pet+Supplies%22%7D%2C%7B%22browseNode%22%3A%222972638011%22%2C%22textStringId%22%3A%22assoc-pl_lawn_garden%22%2C%22searchAlias%22%3A%22lawngarden%22%2C%22awsSearchIndex%22%3A%22LawnAndGarden%22%2C%22order%22%3A22625.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Patio%2C+Lawn+%26+Garden%22%7D%2C%7B%22browseNode%22%3A%22672123011%22%2C%22textStringId%22%3A%22assoc-pl_shoes_34084%22%2C%22searchAlias%22%3A%22shoes%22%2C%22awsSearchIndex%22%3A%22Shoes%22%2C%22order%22%3A22750.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Shoes%22%7D%2C%7B%22browseNode%22%3A%22229534%22%2C%22textStringId%22%3A%22assoc-pl_software_3783%22%2C%22searchAlias%22%3A%22software%22%2C%22awsSearchIndex%22%3A%22Software%22%2C%22order%22%3A23000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Software%22%7D%2C%7B%22browseNode%22%3A%223250697011%22%2C%22textStringId%22%3A%22assoc-pl_sports_collectibles%22%2C%22searchAlias%22%3A%22na-collectibles-us%22%2C%22awsSearchIndex%22%3A%22Collectibles%22%2C%22order%22%3A23500.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Sports+Collectibles%22%7D%2C%7B%22browseNode%22%3A%223375251%22%2C%22textStringId%22%3A%22assoc-pl_sporting_3784%22%2C%22searchAlias%22%3A%22sporting%22%2C%22awsSearchIndex%22%3A%22SportingGoods%22%2C%22order%22%3A24000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Sports+%26+Outdoors%22%7D%2C%7B%22browseNode%22%3A%22228013%22%2C%22textStringId%22%3A%22assoc-pl_tools_3785%22%2C%22searchAlias%22%3A%22tools%22%2C%22awsSearchIndex%22%3A%22Tools%22%2C%22order%22%3A25000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Tools+%26+Hardware%22%7D%2C%7B%22browseNode%22%3A%22165793011%22%2C%22textStringId%22%3A%22assoc-pl_toys_3786%22%2C%22searchAlias%22%3A%22toys-and-games%22%2C%22awsSearchIndex%22%3A%22Toys%22%2C%22order%22%3A26000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Toys+%26+Games%22%7D%2C%7B%22browseNode%22%3A%22404272%22%2C%22textStringId%22%3A%22assoc-pl_vhs_3787%22%2C%22searchAlias%22%3A%22vhs%22%2C%22awsSearchIndex%22%3A%22VHS%22%2C%22order%22%3A27000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22VHS%22%7D%2C%7B%22browseNode%22%3A%22468642%22%2C%22textStringId%22%3A%22assoc-pl_videogames_3772%22%2C%22searchAlias%22%3A%22videogames%22%2C%22awsSearchIndex%22%3A%22VideoGames%22%2C%22order%22%3A28500.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Video+Games%22%7D%2C%7B%22browseNode%22%3A%22377110011%22%2C%22textStringId%22%3A%22assoc-pl_watches_34085%22%2C%22searchAlias%22%3A%22watches%22%2C%22awsSearchIndex%22%3A%22Watches%22%2C%22order%22%3A29000.0%2C%22originalReference%22%3A%7B%22src%22%3A%7B%7D%2C%22id%22%3A%22Category%22%7D%2C%22type%22%3A%22CATEGORY%22%2C%22sourceName%22%3A%22EmptyRelevanceSource%22%2C%22extraInfo%22%3A%7B%7D%2C%22text%22%3A%22Watches%22%7D%5D%7D",resolutionPending:("false"=="true"),styleOverrides:{link:decodeURIComponent(""),header:decodeURIComponent(""),text:decodeURIComponent(""),linkHover:decodeURIComponent("")},size:"autoxauto",maxTitleHeight:parseInt("47"),rows:"2",headerDistance:parseInt("10"),divName:"",searchBarPresent:("false"=="true"),searchBarPosition:"bottom",defaultCategory:"All",defaultSearchPhrase:"",trackingId:"jsmadeeasycom-20",linkId:"0b996352bee5f284f3101274f6ff49fd",linkCode:"w43",refMarkerPrefix:"sm_n_ma_dka_TR_e4058_C_",regionInt:"1",viewerCountry:"TR",impressionId:"Qeqx2xaDTQmF9WjjU_onZc0AAAFUKRbu6QEAAAFK6eS2gA",deviceType:"BROWSER",amznUrl:"http://www.amazon.com",excludeItems:"",excludePhrases:"",fallbackMode:window.fallbackMode,theme:"default",transform:"",filters:"",expDetails:'{"amazon_font":"false","experimentCode":"WIDGETSERVER-NSA-FONT_4058","treatmentCode":"C"}',enableCarousel:("false"=="true"),poweredByAmazonString:"Powered by",searchAmazonBackupString:"Search",trackingUtils:window.trackingUtils("1","//fls-na.amazon-adsystem.com/1/associates-ads/1/OP/r/json","//ir-na.amazon-adsystem.com/e/ir","http://aax-us-east.amazon-adsystem.com/x/px/Qeqx2xaDTQmF9WjjU_onZc0AAAFUKRbu6QEAAAFK6eS2gA/","http://aax-us-east.amazon-adsystem.com/x/c/Qeqx2xaDTQmF9WjjU_onZc0AAAFUKRbu6QEAAAFK6eS2gA/","KWBPpZLd2oadCzxUVPnruQ")}).init(); //# sourceURL=dynscript-1.js
+        </script>
+        <script type="text/javascript">window.fallbackMode={type:"none",value:""}; //# sourceURL=dynscript-0.js</script>
+        <script type="text/javascript" async="" src="http://media.fastclick.net/w/cookie_sync?sid=18969&amp;cb=0.5190791270807757"></script>    
+        <meta name="title" content="JavaScript Made Easy: Free JavaScripts, Tutorials, Example Code, Reference, Resources, And Help">
+        <meta name="description" content="Large Collection of JavaScript source code. Choose from thousands of free scripts. JavaScript tutorials with example code. Excellent reference material for JavaScript. If you need help with JavaScript. JavaScript Made Easy is the place to find it.">
+        <meta name="keywords" content="javascript, jsmadeeasy, script, source code, code, source, online, internet, programing, DHMTL, Navigation, html, developer, develop, css, dhtml, netscape, www.javascript.com, javascript.com, Tutorials, Reference, Windows, Cookies">
+        <meta name="keyphrase" content="javascript, jsmadeeasy, script, source code, code, source, online, internet, programing, DHMTL, Navigation, html, developer, develop, css, dhtml, netscape, www.javascript.com, javascript.com, Tutorials, Reference, Windows, Cookies">
+        <meta name="generator" content="Microsoft FrontPage 4.0">
+        <meta name="author" content="webmaster@jsmadeeasy.com">
+        <meta name="robots" content="index,follow">
+        <meta name="rating" content="General">
+        <meta name="author" content="JSMadeEasy - CSIWorks">
+        <meta name="revisit" content="30 days">
+        <meta name="revisit-after" content="30 days">
+        <meta name="distribution" content="global">
+        <meta name="copyright" content="(C) Copyright 2006 ~ jsmadeeasy.com">
+        <meta name="language" content="english">
+        <meta name="theives" content="JavaScript Made Easy">
+        <meta http-equiv="expires" content="0">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <meta http-equiv="pics-label" content="(pics-1.1 &quot;http://www.icra.org/ratingsv02.html&quot; l gen true for &quot;http://www.jsmadeeasy.com&quot; r (cb 1 lz 1 nz 1 oz 1 vz 1) &quot;http://www.rsac.org/ratingsv01.html&quot; l gen true for &quot;http://www.jsmadeeasy.com&quot; r (n 0 s 0 v 0 l 0))">
+        <script src="https://pagead2.googlesyndication.com/pub-config/r20160212/ca-pub-7590227562986566.js"></script>
+        <script language="javascript" src="/jsexternal/foldernav.js"></script>
+        <title>Hangman_18.04</title>
+        <style type="text/css">.parent { font:10px; Verdana, Arial, Helvetica, sans-serif; text-decoration:none; color: red }.child { color: black; font: 10px; Arial, Helvetica, sans-serif; display:none }.item { color: black; text-decoration:none; cursor: hand }.highlight { color: blue; text-decoration:none }.icon { margin-right: 2 }</style>
+        <style>
+A:link {text-decoration: none; text-decoration:none; color:#0066CC; }
+A:visited {text-decoration: none; text-decoration:none; color:#0066CC; }
+A:hover	{text-decoration: text-decoration:none; color:red}
+
+#SubMenu
+{
+        position: absolute;
+        top: 85px;
+        left: 243px;
+        width: 180px;
+        border: 1px solid #999;
+        visibility: hidden;
+}
+A.list {
+color:white;
+text-decoration:none;
+font-size:7pt;
+font-family:verdana;
+}
+
+A.list:visited {
+color:white;
+text-decoration:none;
+font-size:7pt;
+font-family:verdana;
+}
+
+A.list:hover {
+color:#ffcb10;
+text-decoration:none;
+}
+
+A.wr {
+color:#68B4FF;
+text-decoration:none;
+font-weight:bold;
+font-size:7pt;
+font-family:Verdana, Arial, Helvetica, sans-serif
+}
+A.wr:visited {
+color:#68B4FF;
+text-decoration:none;
+font-weight:bold;
+font-size:7pt;
+font-family:Verdana, Arial, Helvetica, sans-serif
+}
+A.wr:hover {
+color:white;
+text-decoration:underline;
+font-weight:bold;
+font-size:7pt;
+font-family:Verdana, Arial, Helvetica, sans-serif
+}
+
+A.dropmenutitle {
+color:black;
+text-decoration:none;
+font-weight:bold;
+font-size:7.5pt;
+font-family:Verdana
+}
+A.dropmenutitle:visited {
+color:black;
+text-decoration:none;
+font-weight:bold;
+font-size:7.5pt;
+font-family:Verdana
+}
+A.dropmenutitle:hover {
+color:black;
+text-decoration:none;
+font-weight:bold;
+font-size:7.5pt;
+font-family:Verdana
+}
+
+A.dropmenu {
+color:#0066CC;
+text-decoration:underline;
+font-weight:normal;
+font-size:7.5pt;
+font-family:Verdana
+}
+A.dropmenu:visited {
+color:#0066CC;
+text-decoration:underline;
+font-weight:normal;
+font-size:7.5pt;
+font-family:Verdana
+}
+A.dropmenu:hover {
+color:red;
+text-decoration:underline;
+font-weight:normal;
+font-size:7.5pt;
+font-family:Verdana
+}
+body
+{
+margin: 0;
+}
+.gt0 
+{
+BORDER-RIGHT: #6487db 1px solid; PADDING: 0px 4px 2px 4px; 
+BORDER-TOP: #6487db 1px solid; FONT-SIZE: 100%; 
+BORDER-LEFT: #6487db 1px solid; BORDER-BOTTOM: #6487db 1px solid
+}
+.gt1 
+{
+BORDER-RIGHT: #a2b7e9 1px solid; PADDING: 0px 4px 2px 4px; BORDER-TOP: #a2b7e9 1px solid; FONT-SIZE: 100%; BACKGROUND: #5B9BE8; BORDER-LEFT: #a2b7e9 1px solid; BORDER-BOTTOM: #a2b7e9 1px solid
+}
+.gtsep 
+{
+PADDING-RIGHT: 1px; PADDING-LEFT: 1px; PADDING-BOTTOM: 2px; FONT: 65% Verdana; COLOR: #a2b7e9; PADDING-TOP: 0px
+}
+#leftToolbar
+{
+font: 70% Verdana;
+border-top: solid 0px #999;
+border-bottom: solid 0px #999;
+background: #F1F1F1;
+padding: 2px 0px 2px 0px;
+}
+
+#leftToolbar td
+{
+font-size: 100%;
+}
+
+#leftToolbar a
+{
+font: 70% Verdana;
+color: black;
+	text-decoration: none;
+}
+
+#SubMenuBlock
+{
+	font: 70% Verdana;
+	border-top: solid 0px #999;
+	border-bottom: solid 0px #999;
+	background: #F1F1F1;
+	padding: 2px 0px 2px 0px;
+}
+
+#SubMenuBlock td
+{
+	font-size: 100%;
+}
+
+#SubMenuBlock a
+{
+	font: 70% Verdana;
+	color: black;
+	text-decoration: none;
+}
+
+.flyoutLink1
+{
+	border-color: #F1F1F1;
+	border-width: 1px;
+	border-style: solid;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 70%;
+	padding-left: 6px;
+	padding-right: 25px;
+	padding-top: 1px;
+	cursor: hand;
+	border: solid 1px #999;
+	background: #CCC;
+	padding: 2px 6px 2px 6px;
+}
+
+.flyoutLink0 {
+	border-color: #F1F1F1;
+	border-width: 1px;
+	border-style: solid;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 70%;
+	padding-left: 6px;
+	padding-right: 25px;
+	padding-top: 1px;
+	cursor: hand;
+	border: solid 1px #F1F1F1;
+	background: #F1F1F1;
+	padding: 2px 6px 2px 6px;
+}
+
+#localToolbar
+{
+	border-top: solid 1px #999;
+	border-bottom: solid 1px #999;
+	background: #F1F1F1;
+	padding: 2px 0px 2px 0px;
+	font-size: 100%;
+}
+
+#localToolbar td
+{
+	font-size: 100%;
+}
+
+#localToolbar a
+{
+	font: 70% Verdana;
+	color: black;
+	text-decoration: none;
+}
+
+.lt0
+{
+	border: solid 1px #F1F1F1;
+	background: #F1F1F1;
+	padding: 0px 6px 0px 6px;
+}
+
+.lt1
+{
+	border: solid 1px #999;
+	background: #CCC;
+	padding: 0px 6px 0px 6px;
+}
+
+.ltsep
+{
+	font: 70% Verdana;
+	color: #A9A9A9;
+	padding: 0px 1px;
+}
+
+#homePageLink
+{
+	width: 176px;
+	padding-left: 2px;
+}
+
+#homePageLink td
+{
+	font-size: 100%;
+}
+
+#homePageLink a
+{
+	display: block;
+	border: solid 1px #F1F1F1;
+	padding: 2px 6px 2px 6px;
+	margin: 0px;
+	background: #F1F1F1;
+	white-space: nowrap;
+}
+
+#homePageLink a:hover
+{
+	display: block;
+	border: solid 1px #999;
+	padding: 2px 6px 2px 6px;
+	margin: 0px;
+	background: #CCC;
+}
+
+#footer
+{
+	font: 70% Tahoma, Helvetica;
+	border-top: solid 1px #003499;
+	position: absolute;
+}
+
+#footer td
+{
+	font-size: 100%;
+}
+
+#localFooter
+{
+	margin: 0px;
+	padding-top: 8px;
+	padding-left: 10px;
+}
+
+#globalFooter
+{
+	margin: 0px;
+	padding-top: 10px;
+	padding-bottom: 13px;
+	padding-left: 10px;
+}
+
+#footer a
+{
+	color: #03C;
+	margin-right: 2px;
+	background: transparent;
+	font-weight: normal;
+}
+
+#footer a:visited
+{
+	color: #03C;
+	background: transparent;
+	font-weight: normal;
+}
+
+#footer a:hover
+{
+	color: #F60;
+	background: transparent;
+	font-weight: normal;
+}
+#footer nobr
+{
+        color: #A9A9A9;
+        margin-right: 5px;
+}
+.flyoutHeading {
+        font-family: Verdana, Arial, Helvetica;
+        font-size: 10pt; 
+        background-color: #F1F1F1;
+        font-weight: bold;
+        padding-top: 2px;
+        padding-bottom: 4px;
+        padding-left: 2px;
+        cursor: default;
+}
+</style>
+       <script type="text/javascript">
+           
+function changeState(layerRef, state){
+        layer = ".all";
+        style = ".style";
+        eval("document" + layer + "['" + layerRef + "']" + style + ".visibility = '" + state + "'");
+}
+</script>
+<link rel="stylesheet" href="/stylesheet.css">
+    </head>
+ 
+    <body>
+<table border=8 bgcolor=white width=60% cellspacing=0>
+<tr><td>
+<center>
+<h2>HANGMAN!..</h2><br>
+<b><h3><font color=red>Topic:</font> The Methods in Molecular Biology and Genetics</h3></b>
+<hr><br>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function getCookie (name) {
+var dcookie = document.cookie;
+var cname = name + "=";
+var clen = dcookie.length;
+var cbegin = 0;
+while (cbegin < clen) {
+var vbegin = cbegin + cname.length;
+if (dcookie.substring(cbegin, vbegin) == cname) {
+var vend = dcookie.indexOf (";", vbegin);
+if (vend == -1) vend = clen;
+return unescape(dcookie.substring(vbegin, vend));
+}
+cbegin = dcookie.indexOf(" ", cbegin) + 1;
+if (cbegin == 0) break;
+}
+return null;
+}
+function setCookie (name, value, expires) {
+if (!expires) expires = new Date();
+document.cookie = name + "=" + escape (value) + "; expires=" + expires.toGMTString() +  "; path=/";
+}
+function delCookie (name) {
+var expireNow = new Date();
+document.cookie = name + "=" + "; expires=Thu, 01-Jan-70 00:00:01 GMT" +  "; path=/";
+}
+var Alphabet = new initAlphaArray()
+var NumOfWords = 42;
+var SaveData = "";
+var ImageNum = "";
+var LettersSelected = "";
+var RandomWord = "";
+var DisplayWord = "";
+var position = 0;
+var word = new WordList();
+var expdate = new Date();
+var RandomNumber = (expdate.getSeconds())%NumOfWords;
+function initAlphaArray() {
+this.length = 26;
+this[0] = "A";
+this[1] = "B";
+this[2] = "C";
+this[3] = "D";
+this[4] = "E"
+this[5] = "F"
+this[6] = "G"
+this[7] = "H"
+this[8] = "I"
+this[9] = "J"
+this[10] = "K"
+this[11] = "L"
+this[12] = "M"
+this[13] = "N"
+this[14] = "O"
+this[15] = "P"
+this[16] = "Q"
+this[17] = "R"
+this[18] = "S"
+this[19] = "T"
+this[20] = "U"
+this[21] = "V"
+this[22] = "W"
+this[23] = "X"
+this[24] = "Y"
+this[25] = "Z"
+}
+function WordList() {
+this.length = NumOfWords;
+this[0] = "GEORGE WASHINGTON";
+this[1] = "JOHN ADAMS";
+this[2] = "THOMAS JEFFERSON";
+this[3] = "JAMES MADISON";
+this[4] = "JAMES MONROE";
+this[5] = "JOHN QUINCY ADAMS";
+this[6] = "ANDREW JACKSON";
+this[7] = "MARTIN VAN BUREN";
+this[8] = "WILLIAM HENRY HARRISON";
+this[9] = "JOHN TYLER";
+this[10] = "JAMES POLK";
+this[11] = "ZACHARY TAYLOR";
+this[12] = "MILLARD FILLMORE";
+this[13] = "FRANKLIN PIERCE";
+this[14] = "JAMES BUCHANAN";
+this[15] = "ABRAHAM LINCOLN";
+this[16] = "ANDREW JOHNSON";
+this[17] = "ULYSSES GRANT";
+this[18] = "RUTHERFORD HAYES";
+this[19] = "JAMES GARFIELD";
+this[20] = "CHESTER ARTHUR";
+this[21] = "GROVER CLEVELAND";
+this[22] = "BENJAMIN HARRISON";
+this[23] = "GROVER CLEVELAND";
+this[24] = "WILLIAM MCKINLEY";
+this[25] = "THEODORE ROOSEVELT";
+this[26] = "WILLIAM HOWARD TAFT";
+this[27] = "WOODROW WILSON";
+this[28] = "WARREN HARDING";
+this[29] = "CALVIN COOLIDGE";
+this[30] = "HERBERT HOOVER";
+this[31] = "FRANKLIN ROOSEVELT";
+this[32] = "HARRY TRUMAN";
+this[33] = "DWIGHT EISENHOWER";
+this[34] = "JOHN KENNEDY";
+this[35] = "LYNDON JOHNSON";
+this[36] = "RICHARD NIXON";
+this[37] = "GERALD FORD";
+this[38] = "JIMMY CARTER";
+this[39] = "RONALD REAGAN";
+this[40] = "GEORGE BUSH";
+this[41] = "BILL CLINTON";
+}
+function availableLetters(i) {
+if (LettersSelected.charAt(i)==Alphabet[i])
+document.write('<TD ALIGN=CENTER VALIGN=CENTER WIDTH=20 HEIGHT=12>' +
+'<B><A HREF="javascript:LoadNextPage('+i+',\''+Alphabet[i]+
+'\')">'+Alphabet[i]+'</A></B></TD>');
+else
+document.write('<TD ALIGN=CENTER VALIGN=CENTER WIDTH=20 HEIGHT=12> </TD>');
+}
+function LoadNextPage(selected,letter) {
+var j=0;
+var HoldLettersSelected = LettersSelected;
+LettersSelected = "";
+if (selected == 0) {
+for (j=1; j<=25; j++) {
+LettersSelected += HoldLettersSelected.charAt(j);
+}
+LettersSelected = "^" + LettersSelected;
+}
+else if (selected == 25) {
+for (j=0; j<=24; j++) {
+LettersSelected += HoldLettersSelected.charAt(j);
+}
+LettersSelected += "^";
+}
+else {
+for (j=0; j<selected; j++)
+{
+LettersSelected += HoldLettersSelected.charAt(j);
+}
+LettersSelected += "^";
+for (j=selected+1; j<=25; j++) {
+LettersSelected += HoldLettersSelected.charAt(j);
+   }
+}
+
+
+SaveData = ImageNum + LettersSelected + RandomWord + "*";
+setCookie("_HangMan", SaveData, expdate);
+history.go(0);
+}
+
+// Sets a cookie that will expire in 10 days
+
+expdate.setTime (expdate.getTime() + (1000*60*60*24*10));
+if(getCookie("_HangMan") == null)
+{
+ImageNum = "A";
+LettersSelected = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+RandomWord = word[RandomNumber];
+SaveData = ImageNum + LettersSelected + RandomWord + "*";
+setCookie("_HangMan", SaveData, expdate);
+}
+else {
+SaveData = getCookie("_HangMan");
+ImageNum = SaveData.charAt(0);
+for (position=1; position<=26; position++) {
+LettersSelected += SaveData.charAt(position);
+}
+for (position=27; position<SaveData.indexOf("*"); position++) {
+RandomWord += SaveData.charAt(position);
+   }
+}
+DisplayWord = "";
+for (i=0; i<RandomWord.length; i++) {
+if (RandomWord.charAt(i) == ' ') {
+DisplayWord += " ";
+}
+else {
+MatchFound = false;
+for (j=0; j<=25; j++) {
+if ((LettersSelected.charAt(j) == "^") && (RandomWord.charAt(i) == Alphabet[j])) {
+DisplayWord += RandomWord.charAt(i);
+MatchFound = true;
+   }
+}
+if (!MatchFound) DisplayWord += "-";
+   }
+}
+if (ImageNum == "J") {
+document.write('<font color=red size=4>You Lost!<br>Answer:  "' + RandomWord + '"</font>');
+}
+else if (RandomWord == DisplayWord) {
+document.write('<font color=red size=8>You Win!</font>');
+}
+else {
+document.write('<table>');
+document.write('<tr>');
+for (i=0; i<13; i++) availableLetters(i);
+document.write('</tr>');
+document.write('<tr>');
+for (i=13; i<26; i++) availableLetters(i);
+document.write('</tr>');
+document.write('</table>');
+}
+document.write('<br>');
+document.write('<br>');
+document.write('<font size=9><tt>');
+document.write(DisplayWord);
+document.write('</tt></font>');
+document.write('<form>');
+document.write('<input type="button" VALUE="New Game"'+
+'onClick="delCookie(\'_HangMan\');history.go(0);">');
+document.write('</form>');
+document.write('</center>');
+// End -->
+</SCRIPT>
+</td></tr>
+</table>
+</center>
+    </body>
+</html>
